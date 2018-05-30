@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-public class RoundTimerActivity extends MainActivity {
+public class RoundTimerActivity extends AppCompatActivity {
 
     TextView MainTimer;
 
@@ -28,7 +30,7 @@ public class RoundTimerActivity extends MainActivity {
 //        int yelSecs = i.getIntExtra("yelSecs", 0);
         MainTimer = (TextView) findViewById(R.id.MainTimer);
 
-        int roundMills = (rMins * 60000) + (rSecs * 1000);
+        int roundMills = (rMins * 60000) + (rSecs * 1000) + 1000;
         //int yelMills = (yMins() * 60000) + (ySecs() * 1000);
 
         if (rounds > 0) {
@@ -48,7 +50,7 @@ public class RoundTimerActivity extends MainActivity {
         //                    while (yelMills != -1 && millisUntilFinished <= yelMills && mills == roundMills)
         //                        //have yellow numbers
 
-                    MainTimer.setText(String.format("%02d:%02d:%02d", hourUntilFinished,
+                    MainTimer.setText(String.format(Locale.US, "%02d:%02d:%02d", hourUntilFinished,
                             minUntilFinished, secUntilFinished));
                 }
 
@@ -57,6 +59,7 @@ public class RoundTimerActivity extends MainActivity {
                 public void onFinish() {
                     MainTimer.setText("");
                 }
+
             }.start();
             final Intent breakIntent = new Intent(RoundTimerActivity.this, BreakTimerActivity.class);
             breakIntent.putExtra("rMins", rMins);
@@ -64,8 +67,8 @@ public class RoundTimerActivity extends MainActivity {
             breakIntent.putExtra("bMins", bMins);
             breakIntent.putExtra("bSecs", bSecs);
             breakIntent.putExtra("rounds", --rounds);
-////          breakIntent.putExtra("yelMins", yelMins);
-////          breakIntent.putExtra("yelSecs", yelSecs);
+//          breakIntent.putExtra("yelMins", yelMins);
+//          breakIntent.putExtra("yelSecs", yelSecs);
             Handler myHandler = new Handler();
             myHandler.postDelayed(new Runnable() {
                 @Override
@@ -75,6 +78,5 @@ public class RoundTimerActivity extends MainActivity {
             }, roundMills);
 
         }
-//        finish();
     }
 }

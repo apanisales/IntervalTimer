@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        roundMins = (EditText) findViewById(R.id.rMins);
-        roundSecs = (EditText) findViewById(R.id.rSecs);
+        roundMins = findViewById(R.id.rMins);
+        roundSecs = findViewById(R.id.rSecs);
 
 //        yelMins = null;
 //        yelSecs = null;
@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
 //            yelSecs = (EditText) findViewById(R.id.value2);
 //        }
 
-        breakMins = (EditText) findViewById(R.id.bMins);
-        breakSecs = (EditText) findViewById(R.id.bSecs);
+        breakMins = findViewById(R.id.bMins);
+        breakSecs = findViewById(R.id.bSecs);
 
 //        continuous = (EditText) findViewById(R.id.value1);
 //
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 //            numRounds = (EditText) findViewById(R.id.value1);
     }
 
-    public int getRoundMins() {
+    protected int getRoundMins() {
         String s = roundMins.getText().toString();
         if (!s.equals("")) {
             int t = Integer.parseInt(s);
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         return 0;
     }
 
-    public int getRoundSecs() {
+    protected int getRoundSecs() {
         String s = roundSecs.getText().toString();
         if (!s.equals("")) {
             int t = Integer.parseInt(s);
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 //        return 0;
 //    }
 
-    public int getBreakMins() {
+    protected int getBreakMins() {
         String s = breakMins.getText().toString();
         if (!s.equals("")) {
             int t = Integer.parseInt(s);
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         return 0;
     }
 
-    public int getBreakSecs() {
+    protected int getBreakSecs() {
         String s = breakSecs.getText().toString();
         if (!s.equals("")) {
             int t = Integer.parseInt(s);
@@ -143,8 +143,9 @@ public class MainActivity extends AppCompatActivity {
         roundIntent.putExtra("bMins", bMins);
         roundIntent.putExtra("bSecs", bSecs);
         roundIntent.putExtra("rounds", rounds);
-////        roundIntent.putExtra("yelMins", yelMins);
-////        roundIntent.putExtra("yelSecs", yelSecs);
+//        roundIntent.putExtra("yelMins", yelMins);
+//        roundIntent.putExtra("yelSecs", yelSecs);
+//        Toast.makeText(this, "Pork", Toast.LENGTH_SHORT).show();
         startActivity(roundIntent);
     }
     //Have stop button?

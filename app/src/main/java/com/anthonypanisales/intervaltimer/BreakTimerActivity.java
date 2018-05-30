@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-public class BreakTimerActivity extends MainActivity {
+public class BreakTimerActivity extends AppCompatActivity {
 
     TextView MainTimer;
 
@@ -28,7 +30,7 @@ public class BreakTimerActivity extends MainActivity {
 //      int yelSecs = i.getIntExtra("yelSecs", 0);
         MainTimer = (TextView) findViewById(R.id.MainTimer);
 
-        int breakMills = (bMins * 60000) + (bSecs * 1000);
+        int breakMills = (bMins * 60000) + (bSecs * 1000) + 1000;
 
         //if (mills == breakMills)
             //have red numbers
@@ -45,7 +47,7 @@ public class BreakTimerActivity extends MainActivity {
 //                    while (yelMills != -1 && millisUntilFinished <= yelMills && mills == roundMills)
 //                        //have yellow numbers
 
-                MainTimer.setText(String.format("%02d:%02d:%02d", hourUntilFinished,
+                MainTimer.setText(String.format(Locale.US, "%02d:%02d:%02d", hourUntilFinished,
                         minUntilFinished, secUntilFinished));
             }
 
@@ -70,6 +72,5 @@ public class BreakTimerActivity extends MainActivity {
                 startActivity(roundIntent);
             }
         }, breakMills);
-//        finish();
     }
 }

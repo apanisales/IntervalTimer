@@ -123,7 +123,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.263" />
+            app:layout_constraintVertical_bias="0.263"
+            android:hint="@string/zero" />
 
         <EditText
             android:id="@+id/bMins"
@@ -140,7 +141,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.626" />
+            app:layout_constraintVertical_bias="0.626"
+            android:hint="@string/zero"/>
 
         <EditText
             android:id="@+id/bSecs"
@@ -157,7 +159,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.626" />
+            app:layout_constraintVertical_bias="0.626"
+            android:hint="@string/zero"/>
 
         <EditText
             android:id="@+id/rSecs"
@@ -174,7 +177,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.263" />
+            app:layout_constraintVertical_bias="0.263"
+            android:hint="@string/zero"/>
 
         <TextView
             android:id="@+id/textView4"

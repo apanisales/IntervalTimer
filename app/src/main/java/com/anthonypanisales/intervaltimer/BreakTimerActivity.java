@@ -6,7 +6,6 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
@@ -14,6 +13,13 @@ import java.util.concurrent.TimeUnit;
 public class BreakTimerActivity extends AppCompatActivity {
 
     TextView MainTimer;
+    Handler myHandler;
+
+    @Override
+    public void onBackPressed() {
+        myHandler.removeCallbacksAndMessages(null);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +32,12 @@ public class BreakTimerActivity extends AppCompatActivity {
         int bMins = i.getIntExtra("bMins", 0);
         int bSecs = i.getIntExtra("bSecs", 0);
         int rounds = i.getIntExtra("rounds", 0);
+
 //      int yelMins = i.getIntExtra("yelMins", 0);
 //      int yelSecs = i.getIntExtra("yelSecs", 0);
-        MainTimer = (TextView) findViewById(R.id.MainTimer);
+        MainTimer = findViewById(R.id.MainTimer);
 
         int breakMills = (bMins * 60000) + (bSecs * 1000) + 1000;
-
-        //if (mills == breakMills)
-            //have red numbers
 
         new CountDownTimer(breakMills, 1000) {
 
@@ -53,23 +57,25 @@ public class BreakTimerActivity extends AppCompatActivity {
 
             //have stop button
             //have round counter
-            public void onFinish() {
-                MainTimer.setText("");
-            }
+            public void onFinish() {}
+
         }.start();
+
         final Intent roundIntent = new Intent(BreakTimerActivity.this, RoundTimerActivity.class);
         roundIntent.putExtra("rMins", rMins);
         roundIntent.putExtra("rSecs", rSecs);
         roundIntent.putExtra("bMins", bMins);
         roundIntent.putExtra("bSecs", bSecs);
-        roundIntent.putExtra("rounds", --rounds);
-////          breakIntent.putExtra("yelMins", yelMins);
-////          breakIntent.putExtra("yelSecs", yelSecs);
-        Handler myHandler = new Handler();
+        roundIntent.putExtra("rounds", rounds);
+        //          roundIntent.putExtra("yelMins", yelMins);
+        //          roundIntent.putExtra("yelSecs", yelSecs);
+
+        myHandler = new Handler();
         myHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 startActivity(roundIntent);
+                finish();
             }
         }, breakMills);
     }

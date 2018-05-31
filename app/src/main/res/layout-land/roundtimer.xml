@@ -12,6 +12,8 @@
 
         <TextView
             android:id="@+id/MainTimer"
+            android:textSize="@dimen/timer_font_size"
+            android:textColor="@color/roundTimerColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"

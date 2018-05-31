@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 'android-P'
+    compileSdkVersion 27
     buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.anthonypanisales.intervaltimer"
-        minSdkVersion 26
+        minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"

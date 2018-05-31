@@ -14,7 +14,6 @@
 
         <TextView
             android:id="@+id/textView5"
-            android:textColor="@color/main_activity_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -22,8 +21,9 @@
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
             android:text="Seconds"
+            android:textColor="@color/main_activity_text"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.692"
+            app:layout_constraintHorizontal_bias="0.655"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -31,7 +31,6 @@
 
         <TextView
             android:id="@+id/textView9"
-            android:textColor="@color/main_activity_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -39,8 +38,9 @@
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
             android:text="Seconds"
+            android:textColor="@color/main_activity_text"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.692"
+            app:layout_constraintHorizontal_bias="0.655"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -48,7 +48,6 @@
 
         <TextView
             android:id="@+id/textView"
-            android:textColor="@color/main_activity_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -56,6 +55,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
             android:text="Time Per Break"
+            android:textColor="@color/main_activity_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.166"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -66,7 +66,6 @@
 
         <TextView
             android:id="@+id/textView6"
-            android:textColor="@color/main_activity_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -74,16 +73,16 @@
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
             android:text="Time Per Round"
+            android:textColor="@color/main_activity_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.167"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.154" />
+            app:layout_constraintVertical_bias="0.179" />
 
         <TextView
             android:id="@+id/textView2"
-            android:textColor="@color/main_activity_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -91,8 +90,9 @@
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
             android:text="Minutes"
+            android:textColor="@color/main_activity_text"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.236"
+            app:layout_constraintHorizontal_bias="0.273"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -100,7 +100,6 @@
 
         <TextView
             android:id="@+id/textView7"
-            android:textColor="@color/main_activity_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -108,8 +107,9 @@
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
             android:text="Minutes"
+            android:textColor="@color/main_activity_text"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.236"
+            app:layout_constraintHorizontal_bias="0.273"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -117,75 +117,79 @@
 
         <EditText
             android:id="@+id/rMins"
-            android:layout_width="63dp"
-            android:layout_height="wrap_content"
+            android:layout_width="41dp"
+            android:layout_height="26dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
+            android:background="@color/main_activity_editText"
             android:ems="10"
+            android:hint="@string/zero"
             android:inputType="number"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.378"
+            app:layout_constraintHorizontal_bias="0.403"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.263"
-            android:hint="@string/zero" />
+            app:layout_constraintVertical_bias="0.328" />
 
         <EditText
             android:id="@+id/bMins"
-            android:layout_width="63dp"
-            android:layout_height="wrap_content"
+            android:layout_width="39dp"
+            android:layout_height="27dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
+            android:background="@color/main_activity_editText"
             android:ems="10"
+            android:hint="@string/zero"
             android:inputType="number"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.378"
+            app:layout_constraintHorizontal_bias="0.404"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.626"
-            android:hint="@string/zero"/>
+            app:layout_constraintVertical_bias="0.673" />
 
         <EditText
             android:id="@+id/bSecs"
-            android:layout_width="63dp"
-            android:layout_height="wrap_content"
+            android:layout_width="35dp"
+            android:layout_height="25dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
+            android:background="@color/main_activity_editText"
             android:ems="10"
+            android:hint="@string/zero"
             android:inputType="number"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.543"
+            app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.626"
-            android:hint="@string/zero"/>
+            app:layout_constraintVertical_bias="0.668" />
 
         <EditText
             android:id="@+id/rSecs"
-            android:layout_width="63dp"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
+            android:background="@color/main_activity_editText"
             android:ems="10"
+            android:hint="@string/zero"
             android:inputType="number"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.543"
+            app:layout_constraintHorizontal_bias="0.52"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.263"
-            android:hint="@string/zero"/>
+            app:layout_constraintVertical_bias="0.326" />
 
         <TextView
             android:id="@+id/textView4"
@@ -197,11 +201,11 @@
             android:layout_marginTop="8dp"
             android:text=":"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.465"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.465"
-            app:layout_constraintVertical_bias="0.613" />
+            app:layout_constraintVertical_bias="0.672" />
 
         <TextView
             android:id="@+id/textView8"
@@ -210,30 +214,32 @@
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
+            android:textColor="@color/main_activity_text"
             android:layout_marginTop="8dp"
             android:text=":"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.464"
+            app:layout_constraintHorizontal_bias="0.465"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.264" />
+            app:layout_constraintVertical_bias="0.339" />
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
+            android:textColor="@color/main_activity_text"
             android:layout_height="wrap_content"
-            android:text="Interval Timer"
+            android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
-            app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Interval Timer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.457"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintVertical_bias="0.073"
-            app:layout_constraintHorizontal_bias="0.457" />
+            app:layout_constraintVertical_bias="0.073" />
 
         <Button
             android:id="@+id/button"
@@ -243,14 +249,14 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
-            android:text="Start"
             android:onClick="onButtonTap"
+            android:text="Start"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.459"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.923"
-            app:layout_constraintHorizontal_bias="0.459" />
+            app:layout_constraintVertical_bias="0.923" />
 
     </android.support.constraint.ConstraintLayout>
 </android.support.design.widget.CoordinatorLayout>

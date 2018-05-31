@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="breakTimerColor">#FF0000</color>
     <color name="roundTimerColor">#008000</color>
-    <color name="main_activity_text">#941d64</color>
+    <color name="main_activity_text">#d1278a</color>
+    <color name="main_activity_editText">#FFFF</color>
     <color name="background">#363535</color>
 </resources>

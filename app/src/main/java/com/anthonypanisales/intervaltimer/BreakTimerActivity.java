@@ -33,8 +33,6 @@ public class BreakTimerActivity extends AppCompatActivity {
         int bSecs = i.getIntExtra("bSecs", 0);
         int rounds = i.getIntExtra("rounds", 0);
 
-//      int yelMins = i.getIntExtra("yelMins", 0);
-//      int yelSecs = i.getIntExtra("yelSecs", 0);
         MainTimer = findViewById(R.id.MainTimer);
 
         int breakMills = (bMins * 60000) + (bSecs * 1000) + 1000;
@@ -42,22 +40,18 @@ public class BreakTimerActivity extends AppCompatActivity {
         new CountDownTimer(breakMills, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                //MainTimer.setText("seconds remaining: " + millisUntilFinished / 1000);
-                long hourUntilFinished = TimeUnit.MILLISECONDS.toHours(millisUntilFinished);
                 long minUntilFinished = TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) % 60;
                 long secUntilFinished = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) % 60;
-                //make sound at end of round
-                //make sound at start of round
-//                    while (yelMills != -1 && millisUntilFinished <= yelMills && mills == roundMills)
-//                        //have yellow numbers
 
-                MainTimer.setText(String.format(Locale.US, "%02d:%02d:%02d", hourUntilFinished,
-                        minUntilFinished, secUntilFinished));
+
+                MainTimer.setText(String.format(Locale.US, "%02d:%02d", minUntilFinished, secUntilFinished));
             }
 
             //have stop button
             //have round counter
-            public void onFinish() {}
+            public void onFinish() {
+                // TODO: make sound at end of break
+            }
 
         }.start();
 
@@ -67,8 +61,6 @@ public class BreakTimerActivity extends AppCompatActivity {
         roundIntent.putExtra("bMins", bMins);
         roundIntent.putExtra("bSecs", bSecs);
         roundIntent.putExtra("rounds", rounds);
-        //          roundIntent.putExtra("yelMins", yelMins);
-        //          roundIntent.putExtra("yelSecs", yelSecs);
 
         myHandler = new Handler();
         myHandler.postDelayed(new Runnable() {

@@ -33,35 +33,24 @@ public class RoundTimerActivity extends AppCompatActivity {
         int bSecs = i.getIntExtra("bSecs", 0);
         final int rounds = i.getIntExtra("rounds", 0);
 
-//        int yelMins = i.getIntExtra("yelMins", 0);
-//        int yelSecs = i.getIntExtra("yelSecs", 0);
         MainTimer = findViewById(R.id.MainTimer);
 
         int roundMills = (rMins * 60000) + (rSecs * 1000) + 1000;
-        //int yelMills = (yMins() * 60000) + (ySecs() * 1000);
 
         new CountDownTimer(roundMills, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                //MainTimer.setText("seconds remaining: " + millisUntilFinished / 1000);
-                long hourUntilFinished = TimeUnit.MILLISECONDS.toHours(millisUntilFinished);
                 long minUntilFinished = TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) % 60;
                 long secUntilFinished = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) % 60;
-                //make sound when its the start of yellow period
-                //make sound at end of round
-                //make sound at start of round
-    //                    if (yelMills != -1 && millisUntilFinished == yelMills)
-    //                        //make sound
-    //                    while (yelMills != -1 && millisUntilFinished <= yelMills && mills == roundMills)
-    //                        //have yellow numbers
 
-                MainTimer.setText(String.format(Locale.US, "%02d:%02d:%02d", hourUntilFinished,
-                        minUntilFinished, secUntilFinished));
+                MainTimer.setText(String.format(Locale.US, "%02d:%02d", minUntilFinished, secUntilFinished));
             }
 
             //have stop button
             //have round counter
             public void onFinish() {
+                // TODO: make sound at end of round
+
                 if (rounds == 1)
                     finish();
             }
@@ -77,8 +66,6 @@ public class RoundTimerActivity extends AppCompatActivity {
         breakIntent.putExtra("bMins", bMins);
         breakIntent.putExtra("bSecs", bSecs);
         breakIntent.putExtra("rounds", rounds - 1);
-        //          breakIntent.putExtra("yelMins", yelMins);
-        //          breakIntent.putExtra("yelSecs", yelSecs);
 
         myHandler = new Handler();
         myHandler.postDelayed(new Runnable() {

@@ -4,137 +4,57 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.NumberPicker;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText roundMins, roundSecs, breakMins, breakSecs;
+    private NumberPicker roundMins, roundSecs, breakMins, breakSecs;
     public int rMins, rSecs, bMins, bSecs;
 
-    //Get user input
-        //get round duration
-        //get yellow period duration
-        //get break duration
-        //continuous or certain number of rounds
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        roundMins = findViewById(R.id.rMins);
-        roundSecs = findViewById(R.id.rSecs);
+        String[] minsAndSecs = new String[60];
 
-//        yelMins = null;
-//        yelSecs = null;
-//        if (user wants yellow numbers) {
-//            yelMins = (EditText) findViewById(R.id.value1);
-//            yelSecs = (EditText) findViewById(R.id.value2);
-//        }
+        for (int i = 0; i < 60; i++)
+            minsAndSecs[i] = Integer.toString(i);
 
-        breakMins = findViewById(R.id.bMins);
-        breakSecs = findViewById(R.id.bSecs);
+        roundMins = findViewById(R.id.round_min_picker);
+        roundSecs = findViewById(R.id.round_sec_picker);
 
-//        continuous = (EditText) findViewById(R.id.value1);
-//
-//        numRounds;
-//        if (continuous)
-//            numRounds = (EditText) findViewById(R.id.value1);
+        roundMins.setMinValue(0);
+        roundMins.setMaxValue(minsAndSecs.length-1);
+        roundMins.setDisplayedValues(minsAndSecs);
+
+        roundSecs.setMinValue(0);
+        roundSecs.setMaxValue(minsAndSecs.length-1);
+        roundSecs.setDisplayedValues(minsAndSecs);
+
+        breakMins = findViewById(R.id.break_min_picker);
+        breakSecs = findViewById(R.id.break_sec_picker);
+
+        breakMins.setMinValue(0);
+        breakMins.setMaxValue(minsAndSecs.length-1);
+        breakMins.setDisplayedValues(minsAndSecs);
+
+        breakSecs.setMinValue(0);
+        breakSecs.setMaxValue(minsAndSecs.length-1);
+        breakSecs.setDisplayedValues(minsAndSecs);
+
+        // TODO: Get continuous or certain number of rounds
     }
-
-    protected int getRoundMins() {
-        String s = roundMins.getText().toString();
-        if (!s.equals("")) {
-            int t = Integer.parseInt(s);
-            if (!(t <= 0))
-                return t;
-        }
-        return 0;
-    }
-
-    protected int getRoundSecs() {
-        String s = roundSecs.getText().toString();
-        if (!s.equals("")) {
-            int t = Integer.parseInt(s);
-            if (!(t <= 0))
-                return t;
-        }
-        return 0;
-    }
-
-//    public int getYelMins() {
-//        String s = yMins.getText().toString();
-//         if (!s.equals("")) {
-//            int t = Integer.parseInt(s);
-//            if (!(t <= 0))
-//                    return t;
-//        }
-//        return 0;
-//    }
-//
-//    public int getYelSecs() {
-//        if (!yelSecs.getText().equals("")) {
-//          int t = Integer.parseInt(yelSecs.getText().toString());
-//            if (!(t <= 0))
-//                return t;
-//            }
-//        return 0;
-//    }
-
-    protected int getBreakMins() {
-        String s = breakMins.getText().toString();
-        if (!s.equals("")) {
-            int t = Integer.parseInt(s);
-            if (!(t <= 0))
-                return t;
-        }
-        return 0;
-    }
-
-    protected int getBreakSecs() {
-        String s = breakSecs.getText().toString();
-        if (!s.equals("")) {
-            int t = Integer.parseInt(s);
-            if (!(t <= 0))
-                return t;
-        }
-        return 0;
-    }
-
-//    public int getnumRounds() {
-//        if (!numRounds.getText().equals("")) {
-//            int t = Integer.parseInt(breakSecs.getText().toString());
-//          if (!(t <= 0))
-//            return t;
-//          }
-//        return 0;
-//    }
 
     //Start button
     public void onButtonTap(View v) {
-        rMins = getRoundMins();
-        if (rMins < 0) {
-            Toast.makeText(this, "Invalid round minutes", Toast.LENGTH_SHORT).show();
-            return;
-        }
+        rMins = roundMins.getValue();
+        rSecs = roundSecs.getValue();
+        bMins = breakMins.getValue();
+        bSecs = breakSecs.getValue();
 
-        rSecs = getRoundSecs();
-        if (rSecs < 0 || rSecs > 59){
-            Toast.makeText(this, "Invalid round seconds", Toast.LENGTH_SHORT).show();
+        if ((rMins == 0 && rSecs == 0) || (bMins == 0 && bSecs == 0))
             return;
-        }
-
-        bMins = getBreakMins();
-        if (bMins < 0){
-            Toast.makeText(this, "Invalid break minutes", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        bSecs = getBreakSecs();
-        if (bSecs < 0 || bSecs > 59){
-            Toast.makeText(this, "Invalid break seconds", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
         int rounds = 3;
         Intent roundIntent = new Intent(MainActivity.this, RoundTimerActivity.class);
@@ -143,11 +63,6 @@ public class MainActivity extends AppCompatActivity {
         roundIntent.putExtra("bMins", bMins);
         roundIntent.putExtra("bSecs", bSecs);
         roundIntent.putExtra("rounds", rounds);
-//        roundIntent.putExtra("yelMins", yelMins);
-//        roundIntent.putExtra("yelSecs", yelSecs);
-//        Toast.makeText(this, "Pork", Toast.LENGTH_SHORT).show();
         startActivity(roundIntent);
     }
-    //Have stop button?
-    //Have exit button
 }

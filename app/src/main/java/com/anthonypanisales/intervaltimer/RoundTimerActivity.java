@@ -46,10 +46,12 @@ public class RoundTimerActivity extends AppCompatActivity {
                 MainTimer.setText(String.format(Locale.US, "%02d:%02d", minUntilFinished, secUntilFinished));
             }
 
-            //have stop button
-            //have round counter
+            // TODO: Make pause/stop button
+            // TODO: Make round counter
+            // TODO: Make cancel button
+
             public void onFinish() {
-                // TODO: make sound at end of round
+                // TODO: Make sound at end of round
 
                 if (rounds == 1)
                     finish();

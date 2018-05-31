@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.NumberPicker;
 
+// TODO: Fix activity_main for landscape
+
 public class MainActivity extends AppCompatActivity {
 
     private NumberPicker roundMins, roundSecs, breakMins, breakSecs;

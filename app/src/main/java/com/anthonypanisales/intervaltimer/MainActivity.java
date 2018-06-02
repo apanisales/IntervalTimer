@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         roundIntent.putExtra("bMins", bMins);
         roundIntent.putExtra("bSecs", bSecs);
         roundIntent.putExtra("rounds", rounds);
+        roundIntent.putExtra("currentRound", 1);
         startActivity(roundIntent);
     }
 }

@@ -1,4 +1,5 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="timer_font_size">120sp</dimen>
+    <dimen name="round_counter_size">50sp</dimen>
 </resources>

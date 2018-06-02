@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.NumberPicker;
+import android.widget.Switch;
 
 // TODO: Fix activity_main for landscape
 
@@ -44,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
         breakSecs.setMinValue(0);
         breakSecs.setMaxValue(minsAndSecs.length-1);
         breakSecs.setDisplayedValues(minsAndSecs);
+
+        Switch roundsSwitch = findViewById(R.id.roundsSwitch);
+
+        if (!roundsSwitch.isChecked()) {
+            // TODO: Ask user for specific number of rounds
+        }
 
         // TODO: Get continuous or certain number of rounds
     }

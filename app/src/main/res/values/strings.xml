@@ -5,4 +5,5 @@
     <string name="pause">Pause</string>
     <string name="cancel">Cancel</string>
     <string name="resume">Resume</string>
+    <string name="roundsSwitch">Continuous Rounds</string>
 </resources>

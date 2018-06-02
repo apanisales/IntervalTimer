@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Switch;
 
@@ -12,7 +13,8 @@ import android.widget.Switch;
 public class MainActivity extends AppCompatActivity {
 
     private NumberPicker roundMins, roundSecs, breakMins, breakSecs;
-    public int rMins, rSecs, bMins, bSecs;
+    private EditText specificRounds;
+    private Switch roundsSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,33 +48,45 @@ public class MainActivity extends AppCompatActivity {
         breakSecs.setMaxValue(minsAndSecs.length-1);
         breakSecs.setDisplayedValues(minsAndSecs);
 
-        Switch roundsSwitch = findViewById(R.id.roundsSwitch);
+        roundsSwitch = findViewById(R.id.roundsSwitch);
+
+//        specificRounds = findViewById(R.id.specificRounds);
 
         if (!roundsSwitch.isChecked()) {
             // TODO: Ask user for specific number of rounds
+            // TODO: Show specificRounds
         }
 
         // TODO: Get continuous or certain number of rounds
     }
 
-    //Start button
+    // Start button
     public void onButtonTap(View v) {
-        rMins = roundMins.getValue();
-        rSecs = roundSecs.getValue();
-        bMins = breakMins.getValue();
-        bSecs = breakSecs.getValue();
+        int rMins = roundMins.getValue();
+        int rSecs = roundSecs.getValue();
+        int bMins = breakMins.getValue();
+        int bSecs = breakSecs.getValue();
+
+        // TODO: If user enters 0, display an error message
+//        int rounds = Integer.parseInt(specificRounds.getText());
 
         if ((rMins == 0 && rSecs == 0) || (bMins == 0 && bSecs == 0))
             return;
 
-        int rounds = 3;
+//        int rounds = 3;
         Intent roundIntent = new Intent(MainActivity.this, RoundTimerActivity.class);
         roundIntent.putExtra("rMins", rMins);
         roundIntent.putExtra("rSecs", rSecs);
         roundIntent.putExtra("bMins", bMins);
         roundIntent.putExtra("bSecs", bSecs);
-        roundIntent.putExtra("rounds", rounds);
+
         roundIntent.putExtra("currentRound", 1);
+
+        if (roundsSwitch.isChecked())
+            roundIntent.putExtra("rounds", -1);
+        else
+//            roundIntent.putExtra("rounds", rounds);
+
         startActivity(roundIntent);
     }
 }

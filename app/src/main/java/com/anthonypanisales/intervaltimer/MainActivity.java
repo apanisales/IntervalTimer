@@ -120,7 +120,6 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         }
 
         // TODO: Get continuous or certain number of rounds
-        // TODO: Add Switch listener (CompoundButton.OnCheckedChangeListener)
     }
 
     // Start button

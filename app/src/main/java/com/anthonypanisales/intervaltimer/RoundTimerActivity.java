@@ -1,9 +1,11 @@
 package com.anthonypanisales.intervaltimer;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -16,8 +18,11 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
 
     private class MyTimer extends CountDownTimer {
 
+        MediaPlayer mySound;
+
         MyTimer(long millisInFuture, long countDownInterval) {
             super(millisInFuture, countDownInterval);
+            mySound = MediaPlayer.create(RoundTimerActivity.this, R.raw.airhorn);
         }
 
         public void onTick(long millisUntilFinished) {
@@ -25,18 +30,19 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
             long secUntilFinished = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) % 60;
             millisecsLeft = millisUntilFinished;
 
-            MainTimerText.setText(String.format(Locale.US, "%02d:%02d", minUntilFinished, secUntilFinished));
+            if (minUntilFinished == 0 && secUntilFinished == 0)
+                mySound.start();
+
+            mainTimerText.setText(String.format(Locale.US, "%02d:%02d", minUntilFinished, secUntilFinished));
         }
 
         public void onFinish() {
-            // TODO: Make sound at end of round
-
             if (rounds == 1)
                 finish();
         }
     }
 
-    private TextView MainTimerText;
+    private TextView mainTimerText;
     private CountDownTimer timer;
     private Handler myHandler;
     private Button pauseButton, resumeButton;
@@ -46,6 +52,7 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onBackPressed() {
+        timer.cancel();
         myHandler.removeCallbacksAndMessages(null);
         finish();
     }
@@ -79,6 +86,7 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
             }
 
             case R.id.round_cancel_button: {
+                timer.cancel();
                 myHandler.removeCallbacksAndMessages(null);
                 finish();
                 break;
@@ -95,13 +103,13 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
 
         rounds = i.getIntExtra("rounds", 0);
 
-        int rMins = i.getIntExtra("rMins", 0);
-        int rSecs = i.getIntExtra("rSecs", 0);
-        int bMins = i.getIntExtra("bMins", 0);
-        int bSecs = i.getIntExtra("bSecs", 0);
+        int roundMins = i.getIntExtra("roundMins", 0);
+        int roundSecs = i.getIntExtra("roundSecs", 0);
+        int breakMins = i.getIntExtra("breakMins", 0);
+        int breakSecs = i.getIntExtra("breakSecs", 0);
         int currentRound = i.getIntExtra("currentRound", 0);
 
-        MainTimerText = findViewById(R.id.MainTimer);
+        mainTimerText = findViewById(R.id.MainTimer);
         TextView roundCounter = findViewById(R.id.round_counter);
         myHandler = new Handler();
 
@@ -116,16 +124,16 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
 
         roundCounter.setText(String.format(Locale.US, "Round %d", currentRound));
 
-        int roundMills = (rMins * 60000) + (rSecs * 1000) + 1000;
+        int roundMills = (roundMins * 60000) + (roundSecs * 1000) + 1000;
 
         timer = new MyTimer(roundMills, 1000);
         timer.start();
 
         breakIntent = new Intent(RoundTimerActivity.this, BreakTimerActivity.class);
-        breakIntent.putExtra("rMins", rMins);
-        breakIntent.putExtra("rSecs", rSecs);
-        breakIntent.putExtra("bMins", bMins);
-        breakIntent.putExtra("bSecs", bSecs);
+        breakIntent.putExtra("roundMins", roundMins);
+        breakIntent.putExtra("roundSecs", roundSecs);
+        breakIntent.putExtra("breakMins", breakMins);
+        breakIntent.putExtra("breakSecs", breakSecs);
         breakIntent.putExtra("rounds", --rounds);
         breakIntent.putExtra("currentRound", ++currentRound);
 

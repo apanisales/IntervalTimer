@@ -237,7 +237,7 @@
             app:layout_constraintVertical_bias="0.556" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/startButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -246,13 +246,13 @@
             android:layout_marginTop="8dp"
             android:onClick="onButtonTap"
             android:text="Start"
-            android:textColor="@color/main_activity_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.531"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.984" />
+            app:layout_constraintVertical_bias="0.984"
+            android:enabled="false"/>
 
         <Switch
             android:id="@+id/roundsSwitch"

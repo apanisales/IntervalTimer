@@ -3,8 +3,11 @@ package com.anthonypanisales.intervaltimer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Switch;
@@ -16,20 +19,55 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity implements NumberPicker.OnValueChangeListener {
 
     private NumberPicker roundMinsPicker, roundSecsPicker, breakMinsPicker, breakSecsPicker;
-    private int roundMins, roundSecs, breakMins, breakSecs;
+    private int roundMins, roundSecs, breakMins, breakSecs, rounds;
     private EditText specificRoundsEditText;
     private Switch roundsSwitch;
     private Button startButton;
 
     public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-        // TODO: Disable start button if invalid values
         roundMins = roundMinsPicker.getValue();
         roundSecs = roundSecsPicker.getValue();
         breakMins = breakMinsPicker.getValue();
         breakSecs = breakSecsPicker.getValue();
 
-        startButton.setEnabled(roundSecs != 0 && breakSecs != 0);
+        if (roundsSwitch.isChecked())
+            startButton.setEnabled(roundSecs != 0 && breakSecs != 0);
+        else
+            startButton.setEnabled(roundSecs != 0 && breakSecs != 0 && rounds != 0);
     }
+
+    private TextWatcher roundsTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            String roundInput = specificRoundsEditText.getText().toString();
+
+            if (!roundInput.equals("")) {
+                rounds = Integer.parseInt(roundInput);
+                startButton.setEnabled(roundSecs != 0 && breakSecs != 0 && rounds != 0);
+            } else {
+                startButton.setEnabled(false);
+            }
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private CompoundButton.OnCheckedChangeListener roundsSwitchListener = new CompoundButton.OnCheckedChangeListener() {
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            if (isChecked)
+                startButton.setEnabled(roundSecs != 0 && breakSecs != 0);
+            else
+                startButton.setEnabled(roundSecs != 0 && breakSecs != 0 && rounds != 0);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,25 +107,26 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         breakSecsPicker.setOnValueChangedListener(this);
 
         roundsSwitch = findViewById(R.id.roundsSwitch);
+        roundsSwitch.setOnCheckedChangeListener(roundsSwitchListener);
 
         startButton = findViewById(R.id.startButton);
 
-//        specificRounds = findViewById(R.id.specificRounds);
+        specificRoundsEditText = findViewById(R.id.specificRounds);
+        specificRoundsEditText.addTextChangedListener(roundsTextWatcher);
 
         if (!roundsSwitch.isChecked()) {
             // TODO: Ask user for specific number of rounds
-            // TODO: Show specificRounds
+                // TODO: Show specificRounds
         }
 
         // TODO: Get continuous or certain number of rounds
+        // TODO: Add Switch listener (CompoundButton.OnCheckedChangeListener)
     }
 
     // Start button
     public void onButtonTap(View v) {
-        // TODO: If user enters 0, display an error message
-//        int rounds = Integer.parseInt(specificRounds.getText());
 
-        int rounds = 3;
+//        rounds = 3;
         Intent roundIntent = new Intent(MainActivity.this, RoundTimerActivity.class);
         roundIntent.putExtra("roundMins", roundMins);
         roundIntent.putExtra("roundSecs", roundSecs);
@@ -97,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         roundIntent.putExtra("currentRound", 1);
 
         if (roundsSwitch.isChecked())
-            roundIntent.putExtra("rounds", -1);
+            roundIntent.putExtra("rounds", "infinite");
         else
             roundIntent.putExtra("rounds", rounds);
 

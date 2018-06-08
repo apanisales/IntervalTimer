@@ -5,7 +5,6 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +13,7 @@ import android.widget.TextView;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-public class RoundTimerActivity extends AppCompatActivity implements View.OnClickListener {
+public class RoundTimerActivity extends AppCompatActivity implements View.OnClickListener  {
 
     private class MyTimer extends CountDownTimer {
 
@@ -26,6 +25,7 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
         }
 
         public void onTick(long millisUntilFinished) {
+            paused = false;
             long minUntilFinished = TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) % 60;
             long secUntilFinished = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) % 60;
             millisecsLeft = millisUntilFinished;
@@ -49,6 +49,16 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
     private long millisecsLeft;
     private int rounds;
     private Intent breakIntent;
+    private Boolean paused;
+
+    @Override
+    protected void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        timer.cancel();
+        myHandler.removeCallbacksAndMessages(null);
+        state.putSerializable("millisecsLeft",  millisecsLeft);
+        state.putSerializable("paused", paused);
+    }
 
     @Override
     public void onBackPressed() {
@@ -64,6 +74,7 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
                 myHandler.removeCallbacksAndMessages(null);
                 pauseButton.setVisibility(View.GONE);
                 resumeButton.setVisibility(View.VISIBLE);
+                paused = true;
                 break;
             }
 
@@ -74,7 +85,7 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
                 myHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if (rounds > 0)
+                        if (rounds != 0)
                             startActivity(breakIntent);
                         finish();
                     }
@@ -82,6 +93,7 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
 
                 resumeButton.setVisibility(View.GONE);
                 pauseButton.setVisibility(View.VISIBLE);
+                paused = false;
                 break;
             }
 
@@ -98,6 +110,8 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.roundtimer);
+
+        Long roundMills;
 
         Intent i = getIntent();
 
@@ -124,7 +138,12 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
 
         roundCounter.setText(String.format(Locale.US, "Round %d", currentRound));
 
-        int roundMills = (roundMins * 60000) + (roundSecs * 1000) + 1000;
+        if (savedInstanceState != null && savedInstanceState.getSerializable("millisecsLeft") != null)
+            roundMills = (Long) savedInstanceState.getSerializable("millisecsLeft");
+        else
+            roundMills = Long.valueOf((roundMins * 60000) + (roundSecs * 1000) + 1000);
+
+        millisecsLeft = roundMills;
 
         timer = new MyTimer(roundMills, 1000);
         timer.start();
@@ -134,16 +153,32 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
         breakIntent.putExtra("roundSecs", roundSecs);
         breakIntent.putExtra("breakMins", breakMins);
         breakIntent.putExtra("breakSecs", breakSecs);
-        breakIntent.putExtra("rounds", --rounds);
         breakIntent.putExtra("currentRound", ++currentRound);
+
+        // If continuous rounds, then no need to decrement
+        if (rounds > 0)
+            breakIntent.putExtra("rounds", --rounds);
+        else
+            breakIntent.putExtra("rounds", rounds);
 
         myHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (rounds > 0)
+                if (rounds != 0)
                     startActivity(breakIntent);
                 finish();
             }
         }, roundMills);
+
+        if (savedInstanceState != null && savedInstanceState.getSerializable("paused") != null) {
+            Boolean savedPaused = (Boolean) savedInstanceState.getSerializable("paused");
+            if (savedPaused) {
+                long minUntilFinished = TimeUnit.MILLISECONDS.toMinutes(roundMills) % 60;
+                long secUntilFinished = TimeUnit.MILLISECONDS.toSeconds(roundMills) % 60;
+
+                mainTimerText.setText(String.format(Locale.US, "%02d:%02d", minUntilFinished, secUntilFinished));
+                pauseButton.performClick();
+            }
+        }
     }
 }

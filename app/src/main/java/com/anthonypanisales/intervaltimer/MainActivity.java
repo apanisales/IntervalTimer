@@ -30,17 +30,21 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         breakMins = breakMinsPicker.getValue();
         breakSecs = breakSecsPicker.getValue();
 
-        if (roundsSwitch.isChecked())
-            startButton.setEnabled(roundSecs != 0 && breakSecs != 0);
-        else
-            startButton.setEnabled(roundSecs != 0 && breakSecs != 0 && rounds != 0);
+        if (roundsSwitch.isChecked()) {
+            startButton.setEnabled(!(roundMins == 0 && roundSecs == 0) &&
+                    !(breakMins == 0 && breakSecs == 0));
+        } else {
+            if (rounds == 1)
+                startButton.setEnabled(!(roundMins == 0 && roundSecs == 0));
+            else
+                startButton.setEnabled(!(roundMins == 0 && roundSecs == 0) &&
+                        !(breakMins == 0 && breakSecs == 0) && rounds != 0);
+        }
     }
 
     private TextWatcher roundsTextWatcher = new TextWatcher() {
         @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-        }
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -48,24 +52,36 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
 
             if (!roundInput.equals("")) {
                 rounds = Integer.parseInt(roundInput);
-                startButton.setEnabled(roundSecs != 0 && breakSecs != 0 && rounds != 0);
+                if (rounds == 1)
+                    startButton.setEnabled(!(roundMins == 0 && roundSecs == 0));
+                else
+                    startButton.setEnabled(!(roundMins == 0 && roundSecs == 0) &&
+                            !(breakMins == 0 && breakSecs == 0) && rounds != 0);
             } else {
                 startButton.setEnabled(false);
             }
         }
 
         @Override
-        public void afterTextChanged(Editable s) {
-
-        }
+        public void afterTextChanged(Editable s) {}
     };
 
     private CompoundButton.OnCheckedChangeListener roundsSwitchListener = new CompoundButton.OnCheckedChangeListener() {
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            if (isChecked)
-                startButton.setEnabled(roundSecs != 0 && breakSecs != 0);
-            else
-                startButton.setEnabled(roundSecs != 0 && breakSecs != 0 && rounds != 0);
+            if (isChecked) {
+                findViewById(R.id.numberOfRoundsText).setVisibility(View.INVISIBLE);
+                specificRoundsEditText.setVisibility(View.INVISIBLE);
+                startButton.setEnabled(!(roundMins == 0 && roundSecs == 0) &&
+                        !(breakMins == 0 && breakSecs == 0));
+            } else {
+                findViewById(R.id.numberOfRoundsText).setVisibility(View.VISIBLE);
+                specificRoundsEditText.setVisibility(View.VISIBLE);
+                if (rounds == 1)
+                    startButton.setEnabled(!(roundMins == 0 && roundSecs == 0));
+                else
+                    startButton.setEnabled(!(roundMins == 0 && roundSecs == 0) &&
+                            !(breakMins == 0 && breakSecs == 0) && rounds != 0);
+            }
         }
     };
 
@@ -114,28 +130,21 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         specificRoundsEditText = findViewById(R.id.specificRounds);
         specificRoundsEditText.addTextChangedListener(roundsTextWatcher);
 
-        if (!roundsSwitch.isChecked()) {
-            // TODO: Ask user for specific number of rounds
-                // TODO: Show specificRounds
-        }
-
         // TODO: Get continuous or certain number of rounds
     }
 
     // Start button
     public void onButtonTap(View v) {
-
-//        rounds = 3;
         Intent roundIntent = new Intent(MainActivity.this, RoundTimerActivity.class);
         roundIntent.putExtra("roundMins", roundMins);
         roundIntent.putExtra("roundSecs", roundSecs);
         roundIntent.putExtra("breakMins", breakMins);
         roundIntent.putExtra("breakSecs", breakSecs);
-
         roundIntent.putExtra("currentRound", 1);
 
+        // -1 means continuous rounds
         if (roundsSwitch.isChecked())
-            roundIntent.putExtra("rounds", "infinite");
+            roundIntent.putExtra("rounds", -1);
         else
             roundIntent.putExtra("rounds", rounds);
 

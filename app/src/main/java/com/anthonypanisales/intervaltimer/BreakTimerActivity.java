@@ -5,7 +5,6 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +23,7 @@ public class BreakTimerActivity extends AppCompatActivity implements View.OnClic
         }
 
         public void onTick(long millisUntilFinished) {
+            paused = false;
             long minUntilFinished = TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) % 60;
             long secUntilFinished = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) % 60;
             millisecsLeft = millisUntilFinished;
@@ -48,6 +48,16 @@ public class BreakTimerActivity extends AppCompatActivity implements View.OnClic
     private int rounds;
     private Intent roundIntent;
     private MediaPlayer mySound;
+    private Boolean paused;
+
+    @Override
+    protected void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        timer.cancel();
+        myHandler.removeCallbacksAndMessages(null);
+        state.putSerializable("millisecsLeft",  millisecsLeft);
+        state.putSerializable("paused", paused);
+    }
 
     @Override
     public void onBackPressed() {
@@ -63,6 +73,7 @@ public class BreakTimerActivity extends AppCompatActivity implements View.OnClic
                 myHandler.removeCallbacksAndMessages(null);
                 pauseButton.setVisibility(View.GONE);
                 resumeButton.setVisibility(View.VISIBLE);
+                paused = true;
                 break;
             }
 
@@ -80,6 +91,7 @@ public class BreakTimerActivity extends AppCompatActivity implements View.OnClic
 
                 resumeButton.setVisibility(View.GONE);
                 pauseButton.setVisibility(View.VISIBLE);
+                paused = false;
                 break;
             }
 
@@ -96,6 +108,8 @@ public class BreakTimerActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.breaktimer);
+
+        Long breakMills;
 
         Intent i = getIntent();
 
@@ -119,7 +133,12 @@ public class BreakTimerActivity extends AppCompatActivity implements View.OnClic
         Button cancelButton = findViewById(R.id.break_cancel_button);
         cancelButton.setOnClickListener(this);
 
-        int breakMills = (breakMins * 60000) + (breakSecs * 1000) + 1000;
+        if (savedInstanceState != null && savedInstanceState.getSerializable("millisecsLeft") != null)
+            breakMills = (Long) savedInstanceState.getSerializable("millisecsLeft");
+        else
+            breakMills = Long.valueOf((breakMins * 60000) + (breakSecs * 1000) + 1000);
+
+        millisecsLeft = breakMills;
 
         timer = new MyTimer(breakMills, 1000);
         timer.start();
@@ -139,5 +158,16 @@ public class BreakTimerActivity extends AppCompatActivity implements View.OnClic
                 finish();
             }
         }, breakMills);
+
+        if (savedInstanceState != null && savedInstanceState.getSerializable("paused") != null) {
+            Boolean savedPaused = (Boolean) savedInstanceState.getSerializable("paused");
+            if (savedPaused) {
+                long minUntilFinished = TimeUnit.MILLISECONDS.toMinutes(breakMills) % 60;
+                long secUntilFinished = TimeUnit.MILLISECONDS.toSeconds(breakMills) % 60;
+
+                mainTimerText.setText(String.format(Locale.US, "%02d:%02d", minUntilFinished, secUntilFinished));
+                pauseButton.performClick();
+            }
+        }
     }
 }

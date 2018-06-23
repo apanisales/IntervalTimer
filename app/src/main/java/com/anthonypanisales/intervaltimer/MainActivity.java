@@ -14,8 +14,6 @@ import android.widget.Switch;
 
 import java.util.Locale;
 
-// TODO: Fix activity_main for landscape
-
 public class MainActivity extends AppCompatActivity implements NumberPicker.OnValueChangeListener {
 
     private NumberPicker roundMinsPicker, roundSecsPicker, breakMinsPicker, breakSecsPicker;
@@ -95,8 +93,8 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         for (int i = 0; i < 60; i++)
             minsAndSecs[i] = String.format(Locale.US, "%02d", i);
 
-        roundMinsPicker = findViewById(R.id.round_min_picker);
-        roundSecsPicker = findViewById(R.id.round_sec_picker);
+        roundMinsPicker = (NumberPicker) findViewById(R.id.round_min_picker);
+        roundSecsPicker = (NumberPicker) findViewById(R.id.round_sec_picker);
 
         roundMinsPicker.setMinValue(0);
         roundMinsPicker.setMaxValue(minsAndSecs.length-1);
@@ -106,8 +104,8 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         roundSecsPicker.setMaxValue(minsAndSecs.length-1);
         roundSecsPicker.setDisplayedValues(minsAndSecs);
 
-        breakMinsPicker = findViewById(R.id.break_min_picker);
-        breakSecsPicker = findViewById(R.id.break_sec_picker);
+        breakMinsPicker = (NumberPicker) findViewById(R.id.break_min_picker);
+        breakSecsPicker = (NumberPicker) findViewById(R.id.break_sec_picker);
 
         breakMinsPicker.setMinValue(0);
         breakMinsPicker.setMaxValue(minsAndSecs.length-1);
@@ -122,15 +120,13 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         breakMinsPicker.setOnValueChangedListener(this);
         breakSecsPicker.setOnValueChangedListener(this);
 
-        roundsSwitch = findViewById(R.id.roundsSwitch);
+        roundsSwitch = (Switch) findViewById(R.id.roundsSwitch);
         roundsSwitch.setOnCheckedChangeListener(roundsSwitchListener);
 
-        startButton = findViewById(R.id.startButton);
+        startButton = (Button) findViewById(R.id.startButton);
 
-        specificRoundsEditText = findViewById(R.id.specificRounds);
+        specificRoundsEditText = (EditText) findViewById(R.id.specificRounds);
         specificRoundsEditText.addTextChangedListener(roundsTextWatcher);
-
-        // TODO: Get continuous or certain number of rounds
     }
 
     // Start button

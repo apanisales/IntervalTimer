@@ -21,7 +21,7 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
 
         MyTimer(long millisInFuture, long countDownInterval) {
             super(millisInFuture, countDownInterval);
-            mySound = MediaPlayer.create(RoundTimerActivity.this, R.raw.airhorn);
+            mySound = MediaPlayer.create(RoundTimerActivity.this, R.raw.boxingbell);
         }
 
         public void onTick(long millisUntilFinished) {
@@ -123,17 +123,17 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
         int breakSecs = i.getIntExtra("breakSecs", 0);
         int currentRound = i.getIntExtra("currentRound", 0);
 
-        mainTimerText = findViewById(R.id.MainTimer);
-        TextView roundCounter = findViewById(R.id.round_counter);
+        mainTimerText = (TextView) findViewById(R.id.MainTimer);
+        TextView roundCounter = (TextView) findViewById(R.id.round_counter);
         myHandler = new Handler();
 
-        pauseButton = findViewById(R.id.round_pause_button);
+        pauseButton = (Button) findViewById(R.id.round_pause_button);
         pauseButton.setOnClickListener(this);
 
-        resumeButton = findViewById(R.id.round_resume_button);
+        resumeButton = (Button) findViewById(R.id.round_resume_button);
         resumeButton.setOnClickListener(this);
 
-        Button cancelButton = findViewById(R.id.round_cancel_button);
+        Button cancelButton = (Button) findViewById(R.id.round_cancel_button);
         cancelButton.setOnClickListener(this);
 
         roundCounter.setText(String.format(Locale.US, "Round %d", currentRound));

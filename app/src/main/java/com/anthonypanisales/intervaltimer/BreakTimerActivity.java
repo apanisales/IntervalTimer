@@ -19,7 +19,7 @@ public class BreakTimerActivity extends AppCompatActivity implements View.OnClic
 
         MyTimer(long millisInFuture, long countDownInterval) {
             super(millisInFuture, countDownInterval);
-            mySound = MediaPlayer.create(BreakTimerActivity.this, R.raw.airhorn);
+            mySound = MediaPlayer.create(BreakTimerActivity.this, R.raw.boxingbell);
         }
 
         public void onTick(long millisUntilFinished) {
@@ -121,16 +121,16 @@ public class BreakTimerActivity extends AppCompatActivity implements View.OnClic
         int breakSecs = i.getIntExtra("breakSecs", 0);
         int currentRound = i.getIntExtra("currentRound", 0);
 
-        mainTimerText = findViewById(R.id.MainTimer);
+        mainTimerText = (TextView) findViewById(R.id.MainTimer);
         myHandler = new Handler();
 
-        pauseButton = findViewById(R.id.break_pause_button);
+        pauseButton = (Button) findViewById(R.id.break_pause_button);
         pauseButton.setOnClickListener(this);
 
-        resumeButton = findViewById(R.id.break_resume_button);
+        resumeButton = (Button) findViewById(R.id.break_resume_button);
         resumeButton.setOnClickListener(this);
 
-        Button cancelButton = findViewById(R.id.break_cancel_button);
+        Button cancelButton = (Button) findViewById(R.id.break_cancel_button);
         cancelButton.setOnClickListener(this);
 
         if (savedInstanceState != null && savedInstanceState.getSerializable("millisecsLeft") != null)

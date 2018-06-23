@@ -19,15 +19,15 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
+            android:text="00:00"
             android:textColor="@color/breakTimerColor"
             android:textSize="@dimen/timer_font_size"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.134"
+            app:layout_constraintHorizontal_bias="0.163"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.715"
-            android:text="00:00"/>
+            app:layout_constraintVertical_bias="0.654" />
 
         <TextView
             android:id="@+id/breakText"
@@ -41,65 +41,59 @@
             android:textColor="@color/breakTimerColor"
             android:textSize="@dimen/round_counter_size"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintHorizontal_bias="0.297"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.123" />
+            app:layout_constraintVertical_bias="0.048" />
 
         <Button
             android:id="@+id/break_pause_button"
-            android:layout_width="172dp"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/pause"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/break_cancel_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintHorizontal_bias="0.881"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.412" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/break_resume_button"
-            android:layout_width="172dp"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:visibility="gone"
             android:text="@string/resume"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/break_cancel_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintHorizontal_bias="0.881"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.412" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/break_cancel_button"
-            android:layout_width="172dp"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="32dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintHorizontal_bias="0.881"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.696" />
+            app:layout_constraintVertical_bias="0.897" />
     </android.support.constraint.ConstraintLayout>
 </android.support.design.widget.CoordinatorLayout>

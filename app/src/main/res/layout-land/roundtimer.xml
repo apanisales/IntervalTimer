@@ -24,11 +24,11 @@
             android:textColor="@color/roundTimerColor"
             android:textSize="@dimen/timer_font_size"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.308"
+            app:layout_constraintHorizontal_bias="0.361"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.691" />
+            app:layout_constraintVertical_bias="0.916" />
 
         <TextView
             android:id="@+id/round_counter"

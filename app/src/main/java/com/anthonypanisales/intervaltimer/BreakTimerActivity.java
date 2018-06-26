@@ -57,6 +57,8 @@ public class BreakTimerActivity extends AppCompatActivity implements View.OnClic
         myHandler.removeCallbacksAndMessages(null);
         state.putSerializable("millisecsLeft",  millisecsLeft);
         state.putSerializable("paused", paused);
+        pauseButton.setVisibility(View.GONE);
+        resumeButton.setVisibility(View.VISIBLE);
     }
 
     @Override

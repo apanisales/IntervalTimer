@@ -3,4 +3,7 @@
     <dimen name="timer_font_size">95sp</dimen>
     <dimen name="round_counter_size">45sp</dimen>
     <dimen name="xlarge_main_menu_text_size">22sp</dimen>
+    <dimen name="xlarge_land_main_menu_text_size">22sp</dimen>
+    <dimen name="large_main_menu_text_size">18sp</dimen>
+    <dimen name="large_land_main_menu_text_size">18sp</dimen>
 </resources>

@@ -1,6 +1,7 @@
 package com.anthonypanisales.intervaltimer;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -85,6 +86,9 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (!getResources().getBoolean(R.bool.portrait_only))
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

@@ -86,11 +86,11 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (!getResources().getBoolean(R.bool.portrait_only))
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (getResources().getBoolean(R.bool.portrait_only))
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         String[] minsAndSecs = new String[60];
 

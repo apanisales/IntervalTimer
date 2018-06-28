@@ -17,18 +17,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="120dp"
             android:layout_marginTop="8dp"
             android:text="Seconds"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw600dp_main_menu_text_size"
+            android:textSize="@dimen/sw720dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.671"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.012"
+            app:layout_constraintStart_toEndOf="@+id/breakMinsText"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.039" />
+            app:layout_constraintVertical_bias="0.017" />
 
         <TextView
             android:id="@+id/roundSecsText"
@@ -40,13 +40,13 @@
             android:layout_marginTop="8dp"
             android:text="Seconds"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw600dp_main_menu_text_size"
+            android:textSize="@dimen/sw720dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.671"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.344"
+            app:layout_constraintStart_toEndOf="@+id/roundMinsText"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
-            app:layout_constraintVertical_bias="0.025" />
+            app:layout_constraintVertical_bias="0.011" />
 
         <TextView
             android:id="@+id/textView"
@@ -58,7 +58,7 @@
             android:layout_marginTop="8dp"
             android:text="Time Per Break"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw600dp_main_menu_text_size"
+            android:textSize="@dimen/sw720dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.149"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -76,7 +76,7 @@
             android:layout_marginTop="8dp"
             android:text="Time Per Round"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw600dp_main_menu_text_size"
+            android:textSize="@dimen/sw720dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.152"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -94,13 +94,13 @@
             android:layout_marginTop="8dp"
             android:text="Minutes"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw600dp_main_menu_text_size"
+            android:textSize="@dimen/sw720dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.313"
+            app:layout_constraintHorizontal_bias="0.352"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.037" />
+            app:layout_constraintVertical_bias="0.019" />
 
         <TextView
             android:id="@+id/roundMinsText"
@@ -112,13 +112,13 @@
             android:layout_marginTop="8dp"
             android:text="Minutes"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw600dp_main_menu_text_size"
+            android:textSize="@dimen/sw720dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.313"
+            app:layout_constraintHorizontal_bias="0.342"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
-            app:layout_constraintVertical_bias="0.024" />
+            app:layout_constraintVertical_bias="0.011" />
 
         <TextView
             android:id="@+id/textView4"
@@ -132,13 +132,10 @@
             android:textColor="@color/main_activity_text"
             android:textSize="40sp"
             app:layout_constraintBottom_toBottomOf="@+id/break_sec_picker"
-            app:layout_constraintEnd_toStartOf="@+id/break_sec_picker"
-            app:layout_constraintHorizontal_bias="0.56"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/break_min_picker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/break_min_picker"
-            app:layout_constraintVertical_bias="0.465" />
+            app:layout_constraintVertical_bias="0.418" />
 
         <TextView
             android:id="@+id/textView8"
@@ -151,13 +148,10 @@
             android:textColor="@color/main_activity_text"
             android:textSize="40sp"
             app:layout_constraintBottom_toBottomOf="@+id/round_sec_picker"
-            app:layout_constraintEnd_toStartOf="@+id/round_sec_picker"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/round_min_picker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/round_min_picker"
-            app:layout_constraintVertical_bias="0.411" />
+            app:layout_constraintVertical_bias="0.353" />
 
         <TextView
             android:id="@+id/Title"
@@ -186,11 +180,11 @@
             android:layout_marginTop="8dp"
             android:background="@color/main_activity_editText"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.283"
+            app:layout_constraintEnd_toStartOf="@+id/textView8"
+            app:layout_constraintHorizontal_bias="0.918"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/roundMinsText"
-            app:layout_constraintVertical_bias="0.026" />
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintVertical_bias="0.078" />
 
         <NumberPicker
             android:id="@+id/round_sec_picker"
@@ -203,10 +197,10 @@
             android:background="@color/main_activity_editText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.702"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/roundSecsText"
-            app:layout_constraintVertical_bias="0.031" />
+            app:layout_constraintHorizontal_bias="0.123"
+            app:layout_constraintStart_toEndOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintVertical_bias="0.082" />
 
         <NumberPicker
             android:id="@+id/break_min_picker"
@@ -218,11 +212,11 @@
             android:layout_marginTop="8dp"
             android:background="@color/main_activity_editText"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.283"
+            app:layout_constraintEnd_toStartOf="@+id/textView4"
+            app:layout_constraintHorizontal_bias="0.945"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/breakMinsText"
-            app:layout_constraintVertical_bias="0.044" />
+            app:layout_constraintVertical_bias="0.021" />
 
         <NumberPicker
             android:id="@+id/break_sec_picker"
@@ -235,10 +229,10 @@
             android:background="@color/main_activity_editText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.702"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.119"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/breakSecsText"
-            app:layout_constraintVertical_bias="0.039" />
+            app:layout_constraintVertical_bias="0.023" />
 
         <Button
             android:id="@+id/startButton"
@@ -253,15 +247,14 @@
             android:text="Start"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/specificRounds"
-            app:layout_constraintVertical_bias="0.277" />
+            app:layout_constraintTop_toBottomOf="@+id/numberOfRoundsText"
+            app:layout_constraintVertical_bias="0.197" />
 
         <Switch
             android:id="@+id/roundsSwitch"
-            android:layout_width="220sp"
+            android:layout_width="280sp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
@@ -270,18 +263,18 @@
             android:checked="true"
             android:text="@string/roundsSwitch"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw600dp_main_menu_text_size"
+            android:textSize="@dimen/sw720dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.387"
+            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/break_min_picker"
-            app:layout_constraintVertical_bias="0.091"
+            app:layout_constraintVertical_bias="0.07"
             tools:checked="true" />
 
         <EditText
             android:id="@+id/specificRounds"
-            android:layout_width="70dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
@@ -294,10 +287,10 @@
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.043"
+            app:layout_constraintHorizontal_bias="0.025"
             app:layout_constraintStart_toEndOf="@+id/numberOfRoundsText"
             app:layout_constraintTop_toBottomOf="@+id/roundsSwitch"
-            app:layout_constraintVertical_bias="0.044" />
+            app:layout_constraintVertical_bias="0.067" />
 
         <TextView
             android:id="@+id/numberOfRoundsText"
@@ -309,14 +302,14 @@
             android:layout_marginTop="8dp"
             android:text="Number of Rounds"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw600dp_main_menu_text_size"
+            android:textSize="@dimen/sw720dp_main_menu_text_size"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.345"
+            app:layout_constraintHorizontal_bias="0.357"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/roundsSwitch"
-            app:layout_constraintVertical_bias="0.046" />
+            app:layout_constraintVertical_bias="0.045" />
 
     </android.support.constraint.ConstraintLayout>
 

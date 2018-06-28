@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         breakMins = breakMinsPicker.getValue();
         breakSecs = breakSecsPicker.getValue();
 
+        /* If an invalid combination of values is selected by the user, the
+        start button will be disabled. */
         if (roundsSwitch.isChecked()) {
             startButton.setEnabled(!(roundMins == 0 && roundSecs == 0) &&
                     !(breakMins == 0 && breakSecs == 0));
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             String roundInput = specificRoundsEditText.getText().toString();
 
+            /* If an invalid combination of values is selected by the user, the
+            start button will be disabled. */
             if (!roundInput.equals("")) {
                 rounds = Integer.parseInt(roundInput);
                 if (rounds == 1)
@@ -65,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         public void afterTextChanged(Editable s) {}
     };
 
+    /* Allows the EditText for getting the number of rounds to appear or disappear depending
+    on whether the continuous rounds switch is enabled or disabled. */
     private CompoundButton.OnCheckedChangeListener roundsSwitchListener = new CompoundButton.OnCheckedChangeListener() {
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             if (isChecked) {
@@ -89,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Phone only has portrait mode. Tablets have portrait and landscape modes.
         if (getResources().getBoolean(R.bool.portrait_only))
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 

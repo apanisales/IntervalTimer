@@ -172,10 +172,10 @@
             android:background="@color/main_activity_editText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.019"
+            app:layout_constraintHorizontal_bias="0.023"
             app:layout_constraintStart_toEndOf="@+id/textView8"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
-            app:layout_constraintVertical_bias="0.017" />
+            app:layout_constraintVertical_bias="0.029" />
 
         <NumberPicker
             android:id="@+id/break_min_picker"
@@ -204,10 +204,10 @@
             android:background="@color/main_activity_editText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.019"
+            app:layout_constraintHorizontal_bias="0.026"
             app:layout_constraintStart_toEndOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.032" />
+            app:layout_constraintVertical_bias="0.037" />
 
         <Button
             android:id="@+id/startButton"

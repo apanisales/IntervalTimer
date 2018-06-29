@@ -173,8 +173,8 @@
 
         <NumberPicker
             android:id="@+id/round_min_picker"
-            android:layout_width="85dp"
-            android:layout_height="70dp"
+            android:layout_width="@dimen/sw300dp_picker_width"
+            android:layout_height="@dimen/sw300dp_picker_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -189,8 +189,8 @@
 
         <NumberPicker
             android:id="@+id/round_sec_picker"
-            android:layout_width="85dp"
-            android:layout_height="70dp"
+            android:layout_width="@dimen/sw300dp_picker_width"
+            android:layout_height="@dimen/sw300dp_picker_height"
             android:layout_marginBottom="56dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -205,8 +205,8 @@
 
         <NumberPicker
             android:id="@+id/break_min_picker"
-            android:layout_width="85dp"
-            android:layout_height="70dp"
+            android:layout_width="@dimen/sw300dp_picker_width"
+            android:layout_height="@dimen/sw300dp_picker_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -221,8 +221,8 @@
 
         <NumberPicker
             android:id="@+id/break_sec_picker"
-            android:layout_width="85dp"
-            android:layout_height="70dp"
+            android:layout_width="@dimen/sw300dp_picker_width"
+            android:layout_height="@dimen/sw300dp_picker_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"

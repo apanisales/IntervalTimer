@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -30,15 +32,17 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
             long secUntilFinished = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) % 60;
             millisecsLeft = millisUntilFinished;
 
-            if (minUntilFinished == 0 && secUntilFinished == 0)
+            if (minUntilFinished == 0 && secUntilFinished == 0) {
                 mySound.start();
+            }
 
             mainTimerText.setText(String.format(Locale.US, "%02d:%02d", minUntilFinished, secUntilFinished));
         }
 
         public void onFinish() {
-            if (rounds == 1)
+            if (rounds == 1) {
                 finish();
+            }
         }
     }
 
@@ -87,8 +91,9 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
                 myHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if (rounds != 0)
+                        if (rounds != 0) {
                             startActivity(breakIntent);
+                        }
                         finish();
                     }
                 }, millisecsLeft);
@@ -125,7 +130,18 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
         int breakSecs = i.getIntExtra("breakSecs", 0);
         int currentRound = i.getIntExtra("currentRound", 0);
 
+        // Gets height and width of device
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
         mainTimerText = (TextView) findViewById(R.id.MainTimer);
+
+        if (height <= 500 && width <= 900) {
+            mainTimerText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 93);
+        }
+
         TextView roundCounter = (TextView) findViewById(R.id.round_counter);
         myHandler = new Handler();
 
@@ -140,10 +156,11 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
 
         roundCounter.setText(String.format(Locale.US, "Round %d", currentRound));
 
-        if (savedInstanceState != null && savedInstanceState.getSerializable("millisecsLeft") != null)
+        if (savedInstanceState != null && savedInstanceState.getSerializable("millisecsLeft") != null) {
             roundMills = (Long) savedInstanceState.getSerializable("millisecsLeft");
-        else
+        } else {
             roundMills = Long.valueOf((roundMins * 60000) + (roundSecs * 1000) + 1000);
+        }
 
         millisecsLeft = roundMills;
 
@@ -158,10 +175,11 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
         breakIntent.putExtra("currentRound", ++currentRound);
 
         // If continuous rounds, then no need to decrement
-        if (rounds > 0)
+        if (rounds > 0) {
             breakIntent.putExtra("rounds", --rounds);
-        else
+        } else {
             breakIntent.putExtra("rounds", rounds);
+        }
 
         myHandler.postDelayed(new Runnable() {
             @Override

@@ -35,11 +35,12 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
             startButton.setEnabled(!(roundMins == 0 && roundSecs == 0) &&
                     !(breakMins == 0 && breakSecs == 0));
         } else {
-            if (rounds == 1)
+            if (rounds == 1) {
                 startButton.setEnabled(!(roundMins == 0 && roundSecs == 0));
-            else
+            } else {
                 startButton.setEnabled(!(roundMins == 0 && roundSecs == 0) &&
                         !(breakMins == 0 && breakSecs == 0) && rounds != 0);
+            }
         }
     }
 
@@ -51,15 +52,18 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             String roundInput = specificRoundsEditText.getText().toString();
 
+            // Should I have a max number of rounds???
+
             /* If an invalid combination of values is selected by the user, the
             start button will be disabled. */
             if (!roundInput.equals("")) {
                 rounds = Integer.parseInt(roundInput);
-                if (rounds == 1)
+                if (rounds == 1) {
                     startButton.setEnabled(!(roundMins == 0 && roundSecs == 0));
-                else
+                } else {
                     startButton.setEnabled(!(roundMins == 0 && roundSecs == 0) &&
                             !(breakMins == 0 && breakSecs == 0) && rounds != 0);
+                }
             } else {
                 startButton.setEnabled(false);
             }
@@ -81,11 +85,12 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
             } else {
                 findViewById(R.id.numberOfRoundsText).setVisibility(View.VISIBLE);
                 specificRoundsEditText.setVisibility(View.VISIBLE);
-                if (rounds == 1)
+                if (rounds == 1) {
                     startButton.setEnabled(!(roundMins == 0 && roundSecs == 0));
-                else
+                } else {
                     startButton.setEnabled(!(roundMins == 0 && roundSecs == 0) &&
                             !(breakMins == 0 && breakSecs == 0) && rounds != 0);
+                }
             }
         }
     };
@@ -96,13 +101,15 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         setContentView(R.layout.activity_main);
 
         // Phone only has portrait mode. Tablets have portrait and landscape modes.
-        if (getResources().getBoolean(R.bool.portrait_only))
+        if (getResources().getBoolean(R.bool.portrait_only)) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
 
         String[] minsAndSecs = new String[60];
 
-        for (int i = 0; i < 60; i++)
+        for (int i = 0; i < 60; i++) {
             minsAndSecs[i] = String.format(Locale.US, "%02d", i);
+        }
 
         roundMinsPicker = (NumberPicker) findViewById(R.id.round_min_picker);
         roundSecsPicker = (NumberPicker) findViewById(R.id.round_sec_picker);
@@ -150,10 +157,11 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         roundIntent.putExtra("currentRound", 1);
 
         // -1 means continuous rounds
-        if (roundsSwitch.isChecked())
+        if (roundsSwitch.isChecked()) {
             roundIntent.putExtra("rounds", -1);
-        else
+        } else {
             roundIntent.putExtra("rounds", rounds);
+        }
 
         startActivity(roundIntent);
     }

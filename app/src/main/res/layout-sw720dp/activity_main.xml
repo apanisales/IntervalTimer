@@ -18,17 +18,17 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="120dp"
+            android:layout_marginStart="105dp"
             android:layout_marginTop="8dp"
             android:text="Seconds"
             android:textColor="@color/main_activity_text"
             android:textSize="@dimen/sw720dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.012"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/breakMinsText"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.017" />
+            app:layout_constraintVertical_bias="0.018" />
 
         <TextView
             android:id="@+id/roundSecsText"
@@ -36,14 +36,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="36dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="105dp"
             android:layout_marginTop="8dp"
             android:text="Seconds"
             android:textColor="@color/main_activity_text"
             android:textSize="@dimen/sw720dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintHorizontal_bias="0.027"
             app:layout_constraintStart_toEndOf="@+id/roundMinsText"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
             app:layout_constraintVertical_bias="0.011" />
@@ -114,7 +114,7 @@
             android:textColor="@color/main_activity_text"
             android:textSize="@dimen/sw720dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.342"
+            app:layout_constraintHorizontal_bias="0.35"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
@@ -172,8 +172,8 @@
 
         <NumberPicker
             android:id="@+id/round_min_picker"
-            android:layout_width="160dp"
-            android:layout_height="145dp"
+            android:layout_width="@dimen/sw720dp_picker_width"
+            android:layout_height="@dimen/sw720dp_picker_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -183,13 +183,13 @@
             app:layout_constraintEnd_toStartOf="@+id/textView8"
             app:layout_constraintHorizontal_bias="0.945"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
-            app:layout_constraintVertical_bias="0.078" />
+            app:layout_constraintTop_toBottomOf="@+id/roundMinsText"
+            app:layout_constraintVertical_bias="0.016" />
 
         <NumberPicker
             android:id="@+id/round_sec_picker"
-            android:layout_width="160dp"
-            android:layout_height="145dp"
+            android:layout_width="@dimen/sw720dp_picker_width"
+            android:layout_height="@dimen/sw720dp_picker_height"
             android:layout_marginBottom="56dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -197,15 +197,15 @@
             android:background="@color/main_activity_editText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.063"
+            app:layout_constraintHorizontal_bias="0.055"
             app:layout_constraintStart_toEndOf="@+id/textView8"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
-            app:layout_constraintVertical_bias="0.082" />
+            app:layout_constraintTop_toBottomOf="@+id/roundSecsText"
+            app:layout_constraintVertical_bias="0.017" />
 
         <NumberPicker
             android:id="@+id/break_min_picker"
-            android:layout_width="160dp"
-            android:layout_height="145dp"
+            android:layout_width="@dimen/sw720dp_picker_width"
+            android:layout_height="@dimen/sw720dp_picker_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -216,12 +216,12 @@
             app:layout_constraintHorizontal_bias="0.945"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/breakMinsText"
-            app:layout_constraintVertical_bias="0.021" />
+            app:layout_constraintVertical_bias="0.019" />
 
         <NumberPicker
             android:id="@+id/break_sec_picker"
-            android:layout_width="160dp"
-            android:layout_height="145dp"
+            android:layout_width="@dimen/sw720dp_picker_width"
+            android:layout_height="@dimen/sw720dp_picker_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -229,10 +229,10 @@
             android:background="@color/main_activity_editText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.059"
+            app:layout_constraintHorizontal_bias="0.05"
             app:layout_constraintStart_toEndOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/breakSecsText"
-            app:layout_constraintVertical_bias="0.023" />
+            app:layout_constraintVertical_bias="0.022" />
 
         <Button
             android:id="@+id/startButton"

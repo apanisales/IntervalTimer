@@ -25,7 +25,7 @@
             android:textSize="@dimen/sw720dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.006"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/breakMinsText"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layout_constraintVertical_bias="0.0" />
@@ -43,10 +43,10 @@
             android:textSize="@dimen/sw720dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.301"
+            app:layout_constraintHorizontal_bias="0.27"
             app:layout_constraintStart_toEndOf="@+id/roundMinsText"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
-            app:layout_constraintVertical_bias="0.007" />
+            app:layout_constraintVertical_bias="0.009" />
 
         <TextView
             android:id="@+id/textView"
@@ -172,8 +172,8 @@
 
         <NumberPicker
             android:id="@+id/round_min_picker"
-            android:layout_width="130dp"
-            android:layout_height="115dp"
+            android:layout_width="@dimen/sw600dp_picker_width"
+            android:layout_height="@dimen/sw600dp_picker_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -183,13 +183,13 @@
             app:layout_constraintEnd_toStartOf="@+id/textView8"
             app:layout_constraintHorizontal_bias="0.933"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
-            app:layout_constraintVertical_bias="0.089" />
+            app:layout_constraintTop_toBottomOf="@+id/roundMinsText"
+            app:layout_constraintVertical_bias="0.007" />
 
         <NumberPicker
             android:id="@+id/round_sec_picker"
-            android:layout_width="130dp"
-            android:layout_height="115dp"
+            android:layout_width="@dimen/sw600dp_picker_width"
+            android:layout_height="@dimen/sw600dp_picker_height"
             android:layout_marginBottom="56dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -197,15 +197,15 @@
             android:background="@color/main_activity_editText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintHorizontal_bias="0.024"
             app:layout_constraintStart_toEndOf="@+id/textView8"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
-            app:layout_constraintVertical_bias="0.097" />
+            app:layout_constraintTop_toBottomOf="@+id/roundSecsText"
+            app:layout_constraintVertical_bias="0.01" />
 
         <NumberPicker
             android:id="@+id/break_min_picker"
-            android:layout_width="130dp"
-            android:layout_height="115dp"
+            android:layout_width="@dimen/sw600dp_picker_width"
+            android:layout_height="@dimen/sw600dp_picker_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -220,8 +220,8 @@
 
         <NumberPicker
             android:id="@+id/break_sec_picker"
-            android:layout_width="130dp"
-            android:layout_height="115dp"
+            android:layout_width="@dimen/sw600dp_picker_width"
+            android:layout_height="@dimen/sw600dp_picker_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -236,7 +236,7 @@
 
         <Button
             android:id="@+id/startButton"
-            android:layout_width="130dp"
+            android:layout_width="@dimen/sw600dp_picker_width"
             android:layout_height="60dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"

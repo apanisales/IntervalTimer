@@ -22,30 +22,30 @@
             android:padding="0dp"
             android:text="00:00"
             android:textColor="@color/breakTimerColor"
-            android:textSize="@dimen/sw300_timer_land_font_size"
+            android:textSize="@dimen/sw300dp_land_timer_font_size"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.322"
+            app:layout_constraintHorizontal_bias="0.231"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.536" />
 
         <TextView
             android:id="@+id/breakText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginStart="308dp"
+            android:layout_marginTop="24dp"
             android:text="Break"
             android:textColor="@color/breakTimerColor"
-            android:textSize="@dimen/round_counter_size"
-            app:layout_constraintBottom_toTopOf="@+id/MainTimer"
-            app:layout_constraintHorizontal_bias="0.398"
-            app:layout_constraintLeft_toLeftOf="parent"
+            android:textSize="@dimen/sw300dp_land_round_counter_size"
+            app:layout_constraintBottom_toTopOf="@+id/break_cancel_button"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.326" />
 
         <Button
             android:id="@+id/break_pause_button"
@@ -58,9 +58,10 @@
             android:text="@string/pause"
             app:layout_constraintBottom_toTopOf="@+id/break_cancel_button"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.452"
             app:layout_constraintStart_toEndOf="@+id/MainTimer"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/breakText"
+            app:layout_constraintVertical_bias="0.894" />
 
         <Button
             android:id="@+id/break_resume_button"
@@ -74,9 +75,10 @@
             android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/break_cancel_button"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toEndOf="@+id/MainTimer"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/breakText"
+            app:layout_constraintVertical_bias="0.87" />
 
         <Button
             android:id="@+id/break_cancel_button"
@@ -89,9 +91,10 @@
             android:text="@string/cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.452"
             app:layout_constraintStart_toEndOf="@+id/MainTimer"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.859" />
+            app:layout_constraintVertical_bias="0.857" />
 
     </android.support.constraint.ConstraintLayout>
 </android.support.design.widget.CoordinatorLayout>

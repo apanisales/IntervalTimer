@@ -136,11 +136,12 @@ public class BreakTimerActivity extends AppCompatActivity implements View.OnClic
 
         mainTimerText = (TextView) findViewById(R.id.MainTimer);
 
+        /* The timer for devices 500px x 900px or smaller and will have a
+        smaller font than the regular sw300dp font of 110sp. */
         if (height <= 500 && width <= 900) {
             mainTimerText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 93);
         }
 
-        TextView roundCounter = (TextView) findViewById(R.id.round_counter);
         myHandler = new Handler();
 
         pauseButton = (Button) findViewById(R.id.break_pause_button);

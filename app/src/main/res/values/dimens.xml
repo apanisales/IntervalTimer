@@ -1,13 +1,18 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
 
-    <dimen name="round_counter_size">45sp</dimen>
-
-    <dimen name="sw300_timer_land_font_size">110sp</dimen>
+    <dimen name="sw300dp_port_round_counter_size">45sp</dimen>
+    <dimen name="sw300dp_land_round_counter_size">25sp</dimen>
+    <dimen name="sw300dp_port_timer_font_size">80sp</dimen>
+    <dimen name="sw300dp_land_timer_font_size">95sp</dimen>
     <dimen name="sw300dp_picker_height">70dp</dimen>
     <dimen name="sw300dp_picker_width">85dp</dimen>
 
     <dimen name="sw400dp_main_menu_text_size">20sp</dimen>
+    <dimen name="sw400dp_port_round_counter_size">55sp</dimen>
+    <dimen name="sw400dp_land_round_counter_size">35sp</dimen>
+    <dimen name="sw400dp_port_timer_font_size">115sp</dimen>
+    <dimen name="sw400dp_land_timer_font_size">120sp</dimen>
     <dimen name="sw400dp_picker_height">90dp</dimen>
     <dimen name="sw400dp_picker_width">110dp</dimen>
 

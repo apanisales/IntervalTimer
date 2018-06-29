@@ -11,6 +11,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
@@ -137,12 +138,14 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
         int width = displayMetrics.widthPixels;
 
         mainTimerText = (TextView) findViewById(R.id.MainTimer);
+        TextView roundCounter = (TextView) findViewById(R.id.round_counter);
 
+        /* The timer for devices 500px x 900px or smaller and will have a
+        smaller font than the regular sw300dp font of 110sp. */
         if (height <= 500 && width <= 900) {
             mainTimerText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 93);
         }
 
-        TextView roundCounter = (TextView) findViewById(R.id.round_counter);
         myHandler = new Handler();
 
         pauseButton = (Button) findViewById(R.id.round_pause_button);

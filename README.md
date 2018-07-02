@@ -1,4 +1,4 @@
-# IntervalTimer
+# Interval Timer
 
 An interval timer Android application.
 

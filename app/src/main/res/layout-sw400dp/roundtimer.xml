@@ -47,8 +47,8 @@
 
         <Button
             android:id="@+id/round_pause_button"
-            android:layout_width="172dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/sw400dp_port_button_width"
+            android:layout_height="@dimen/sw400dp_port_button_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -62,8 +62,8 @@
 
         <Button
             android:id="@+id/round_resume_button"
-            android:layout_width="172dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/sw400dp_port_button_width"
+            android:layout_height="@dimen/sw400dp_port_button_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -78,8 +78,8 @@
 
         <Button
             android:id="@+id/round_cancel_button"
-            android:layout_width="172dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/sw400dp_port_button_width"
+            android:layout_height="@dimen/sw400dp_port_button_height"
             android:layout_marginBottom="60dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"

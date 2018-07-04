@@ -22,7 +22,7 @@
             android:layout_marginTop="8dp"
             android:text="Seconds"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw720dp_main_menu_text_size"
+            android:textSize="@dimen/sw600dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -40,7 +40,7 @@
             android:layout_marginTop="8dp"
             android:text="Seconds"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw720dp_main_menu_text_size"
+            android:textSize="@dimen/sw600dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.27"
@@ -58,7 +58,7 @@
             android:layout_marginTop="8dp"
             android:text="Time Per Break"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw720dp_main_menu_text_size"
+            android:textSize="@dimen/sw600dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.149"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -76,7 +76,7 @@
             android:layout_marginTop="8dp"
             android:text="Time Per Round"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw720dp_main_menu_text_size"
+            android:textSize="@dimen/sw600dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.152"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -94,7 +94,7 @@
             android:layout_marginTop="8dp"
             android:text="Minutes"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw720dp_main_menu_text_size"
+            android:textSize="@dimen/sw600dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.329"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -112,7 +112,7 @@
             android:layout_marginTop="8dp"
             android:text="Minutes"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw720dp_main_menu_text_size"
+            android:textSize="@dimen/sw600dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.329"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -163,7 +163,7 @@
             android:layout_marginTop="8dp"
             android:text="Interval Timer"
             android:textColor="@color/main_activity_text"
-            android:textSize="34sp"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -172,8 +172,8 @@
 
         <NumberPicker
             android:id="@+id/round_min_picker"
-            android:layout_width="@dimen/sw600dp_picker_width"
-            android:layout_height="@dimen/sw600dp_picker_height"
+            android:layout_width="@dimen/sw600dp_port_picker_width"
+            android:layout_height="@dimen/sw600dp_port_picker_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -188,8 +188,8 @@
 
         <NumberPicker
             android:id="@+id/round_sec_picker"
-            android:layout_width="@dimen/sw600dp_picker_width"
-            android:layout_height="@dimen/sw600dp_picker_height"
+            android:layout_width="@dimen/sw600dp_port_picker_width"
+            android:layout_height="@dimen/sw600dp_port_picker_height"
             android:layout_marginBottom="56dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -204,8 +204,8 @@
 
         <NumberPicker
             android:id="@+id/break_min_picker"
-            android:layout_width="@dimen/sw600dp_picker_width"
-            android:layout_height="@dimen/sw600dp_picker_height"
+            android:layout_width="@dimen/sw600dp_port_picker_width"
+            android:layout_height="@dimen/sw600dp_port_picker_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -220,8 +220,8 @@
 
         <NumberPicker
             android:id="@+id/break_sec_picker"
-            android:layout_width="@dimen/sw600dp_picker_width"
-            android:layout_height="@dimen/sw600dp_picker_height"
+            android:layout_width="@dimen/sw600dp_port_picker_width"
+            android:layout_height="@dimen/sw600dp_port_picker_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -236,7 +236,7 @@
 
         <Button
             android:id="@+id/startButton"
-            android:layout_width="@dimen/sw600dp_picker_width"
+            android:layout_width="@dimen/sw600dp_port_picker_width"
             android:layout_height="60dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
@@ -263,7 +263,7 @@
             android:checked="true"
             android:text="@string/roundsSwitch"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw720dp_main_menu_text_size"
+            android:textSize="@dimen/sw600dp_main_menu_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.4"
@@ -302,7 +302,7 @@
             android:layout_marginTop="8dp"
             android:text="Number of Rounds"
             android:textColor="@color/main_activity_text"
-            android:textSize="@dimen/sw720dp_main_menu_text_size"
+            android:textSize="@dimen/sw600dp_main_menu_text_size"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -312,7 +312,4 @@
             app:layout_constraintVertical_bias="0.045" />
 
     </android.support.constraint.ConstraintLayout>
-
-
-
 </android.support.design.widget.CoordinatorLayout>

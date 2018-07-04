@@ -25,7 +25,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.352" />
+            app:layout_constraintVertical_bias="0.355" />
 
         <TextView
             android:id="@+id/breakText"
@@ -47,8 +47,8 @@
 
         <Button
             android:id="@+id/break_pause_button"
-            android:layout_width="172dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/sw400dp_port_button_width"
+            android:layout_height="@dimen/sw400dp_port_button_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -57,13 +57,13 @@
             app:layout_constraintBottom_toTopOf="@+id/break_cancel_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/MainTimer"
             app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/break_resume_button"
-            android:layout_width="172dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/sw400dp_port_button_width"
+            android:layout_height="@dimen/sw400dp_port_button_height"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -78,17 +78,18 @@
 
         <Button
             android:id="@+id/break_cancel_button"
-            android:layout_width="172dp"
-            android:layout_height="60dp"
-            android:layout_marginBottom="8dp"
+            android:layout_width="@dimen/sw400dp_port_button_width"
+            android:layout_height="@dimen/sw400dp_port_button_height"
+            android:layout_marginBottom="60dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.862" />
+            app:layout_constraintVertical_bias="0.878" />
     </android.support.constraint.ConstraintLayout>
 </android.support.design.widget.CoordinatorLayout>

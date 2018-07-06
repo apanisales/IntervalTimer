@@ -27,7 +27,7 @@
     <dimen name="sw600dp_port_button_height">70dp</dimen>
     <dimen name="sw600dp_port_picker_width">110dp</dimen>
     <dimen name="sw600dp_port_picker_height">125dp</dimen>
-    <dimen name="sw600dp_port_button_text_size">20sp</dimen>
+    <dimen name="sw600dp_button_text_size">20sp</dimen>
 
     <dimen name="sw600dp_land_round_counter_size">70sp</dimen>
     <dimen name="sw600dp_land_timer_font_size">200sp</dimen>
@@ -49,4 +49,5 @@
     <dimen name="sw720dp_land_timer_font_size">230sp</dimen>
     <dimen name="sw720dp_land_picker_height">70dp</dimen>
     <dimen name="sw720dp_land_picker_width">120dp</dimen>
+    <dimen name="sw720dp_land_button_text_size">30sp</dimen>
 </resources>

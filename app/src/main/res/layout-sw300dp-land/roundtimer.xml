@@ -30,21 +30,20 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/round_counter"
+            android:id="@+id/round_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginStart="340dp"
             android:layout_marginTop="28dp"
-            android:text="Round x"
+            android:text="Round"
             android:textColor="@color/roundTimerColor"
             android:textSize="@dimen/sw300dp_land_round_counter_size"
             app:layout_constraintBottom_toTopOf="@+id/round_cancel_button"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/MainTimer"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.194" />
+            app:layout_constraintVertical_bias="0.089" />
 
         <Button
             android:id="@+id/round_pause_button"
@@ -54,14 +53,14 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:bottomRightRadius="10dp"
             android:bottomLeftRadius="10dp"
+            android:bottomRightRadius="10dp"
+            android:text="@string/pause"
             android:topLeftRadius="10dp"
             android:topRightRadius="10dp"
-            android:text="@string/pause"
             app:layout_constraintBottom_toTopOf="@+id/round_cancel_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.445"
+            app:layout_constraintHorizontal_bias="0.537"
             app:layout_constraintStart_toEndOf="@+id/MainTimer"
             app:layout_constraintTop_toBottomOf="@+id/round_counter"
             app:layout_constraintVertical_bias="1.0" />
@@ -95,17 +94,33 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:bottomRightRadius="10dp"
             android:bottomLeftRadius="10dp"
+            android:bottomRightRadius="10dp"
+            android:text="@string/cancel"
             android:topLeftRadius="10dp"
             android:topRightRadius="10dp"
-            android:text="@string/cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.445"
+            app:layout_constraintHorizontal_bias="0.537"
             app:layout_constraintStart_toEndOf="@+id/MainTimer"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.857" />
+            app:layout_constraintVertical_bias="0.905" />
+
+        <TextView
+            android:id="@+id/round_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="X"
+            android:textColor="@color/roundTimerColor"
+            android:textSize="@dimen/sw300dp_land_round_counter_size"
+            app:layout_constraintBottom_toTopOf="@+id/round_cancel_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.522"
+            app:layout_constraintStart_toEndOf="@+id/MainTimer"
+            app:layout_constraintTop_toBottomOf="@+id/round_text"
+            app:layout_constraintVertical_bias="0.0" />
 
     </android.support.constraint.ConstraintLayout>
 </android.support.design.widget.CoordinatorLayout>

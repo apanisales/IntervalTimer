@@ -1,6 +1,7 @@
 package com.anthonypanisales.intervaltimer;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -157,7 +158,13 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
         Button cancelButton = (Button) findViewById(R.id.round_cancel_button);
         cancelButton.setOnClickListener(this);
 
-        roundCounter.setText(String.format(Locale.US, "Round %d", currentRound));
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            // Portrait Mode
+            roundCounter.setText(String.format(Locale.US, "Round %d", currentRound));
+        } else {
+            // Landscape Mode
+            roundCounter.setText(String.format(Locale.US, Integer.toString(currentRound)));
+        }
 
         if (savedInstanceState != null && savedInstanceState.getSerializable("millisecsLeft") != null) {
             roundMills = (Long) savedInstanceState.getSerializable("millisecsLeft");

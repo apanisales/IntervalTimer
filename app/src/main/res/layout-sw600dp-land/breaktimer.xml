@@ -31,7 +31,7 @@
             app:layout_constraintVertical_bias="0.496" />
 
         <TextView
-            android:id="@+id/round_counter"
+            android:id="@+id/breakText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -48,7 +48,7 @@
             app:layout_constraintVertical_bias="0.078" />
 
         <Button
-            android:id="@+id/round_pause_button"
+            android:id="@+id/break_pause_button"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="8dp"
@@ -61,14 +61,14 @@
             android:topRightRadius="10dp"
             android:text="@string/pause"
             android:textSize="@dimen/sw600dp_button_text_size"
-            app:layout_constraintBottom_toTopOf="@+id/round_cancel_button"
+            app:layout_constraintBottom_toTopOf="@+id/break_cancel_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/MainTimer"
-            app:layout_constraintTop_toBottomOf="@+id/round_counter"
+            app:layout_constraintTop_toBottomOf="@+id/breakText"
             app:layout_constraintVertical_bias="1.0" />
 
         <Button
-            android:id="@+id/round_resume_button"
+            android:id="@+id/break_resume_button"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="8dp"
@@ -82,14 +82,14 @@
             android:text="@string/resume"
             android:textSize="@dimen/sw600dp_button_text_size"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/round_cancel_button"
+            app:layout_constraintBottom_toTopOf="@+id/break_cancel_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/MainTimer"
-            app:layout_constraintTop_toBottomOf="@+id/round_counter"
+            app:layout_constraintTop_toBottomOf="@+id/breakText"
             app:layout_constraintVertical_bias="1.0" />
 
         <Button
-            android:id="@+id/round_cancel_button"
+            android:id="@+id/break_cancel_button"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="8dp"

@@ -5,8 +5,8 @@
     <dimen name="sw300dp_port_timer_font_size">80sp</dimen>
     <dimen name="sw300dp_port_button_width">172dp</dimen>
     <dimen name="sw300dp_port_button_height">60dp</dimen>
-    <dimen name="sw300dp_land_round_counter_size">30sp</dimen>
-    <dimen name="sw300dp_land_timer_font_size">105sp</dimen>
+    <dimen name="sw300dp_land_round_counter_size">50sp</dimen>
+    <dimen name="sw300dp_land_timer_font_size">105dp</dimen>
     <dimen name="sw300dp_picker_width">85dp</dimen>
     <dimen name="sw300dp_picker_height">70dp</dimen>
 
@@ -15,8 +15,8 @@
     <dimen name="sw400dp_port_timer_font_size">115sp</dimen>
     <dimen name="sw400dp_port_button_width">172dp</dimen>
     <dimen name="sw400dp_port_button_height">60dp</dimen>
-    <dimen name="sw400dp_land_round_counter_size">45sp</dimen>
-    <dimen name="sw400dp_land_timer_font_size">150sp</dimen>
+    <dimen name="sw400dp_land_round_counter_size">55sp</dimen>
+    <dimen name="sw400dp_land_timer_font_size">150dp</dimen>
     <dimen name="sw400dp_picker_width">110dp</dimen>
     <dimen name="sw400dp_picker_height">90dp</dimen>
 
@@ -30,7 +30,7 @@
     <dimen name="sw600dp_button_text_size">20sp</dimen>
 
     <dimen name="sw600dp_land_round_counter_size">70sp</dimen>
-    <dimen name="sw600dp_land_timer_font_size">200sp</dimen>
+    <dimen name="sw600dp_land_timer_font_size">200dp</dimen>
     <dimen name="sw600dp_land_main_menu_text_size">18sp</dimen>
     <dimen name="sw600dp_land_picker_height">70dp</dimen>
     <dimen name="sw600dp_land_picker_width">120dp</dimen>
@@ -45,8 +45,8 @@
     <dimen name="sw720dp_port_button_text_size">25sp</dimen>
 
     <dimen name="sw720dp_land_main_menu_text_size">22dp</dimen>
-    <dimen name="sw720dp_land_round_counter_size">70sp</dimen>
-    <dimen name="sw720dp_land_timer_font_size">230sp</dimen>
+    <dimen name="sw720dp_land_round_counter_size">90sp</dimen>
+    <dimen name="sw720dp_land_timer_font_size">230dp</dimen>
     <dimen name="sw720dp_land_picker_height">70dp</dimen>
     <dimen name="sw720dp_land_picker_width">120dp</dimen>
     <dimen name="sw720dp_land_button_text_size">30sp</dimen>

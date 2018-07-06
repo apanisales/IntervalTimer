@@ -104,7 +104,7 @@
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toEndOf="@+id/MainTimer"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.688" />
+            app:layout_constraintVertical_bias="0.768" />
 
     </android.support.constraint.ConstraintLayout>
 </android.support.design.widget.CoordinatorLayout>

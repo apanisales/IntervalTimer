@@ -94,16 +94,16 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:bottomRightRadius="10dp"
             android:bottomLeftRadius="10dp"
-            android:topLeftRadius="10dp"
-            android:topRightRadius="10dp"
+            android:bottomRightRadius="10dp"
             android:text="@string/cancel"
             android:textSize="@dimen/sw720dp_port_button_text_size"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.877" />
+            app:layout_constraintVertical_bias="0.851" />
     </android.support.constraint.ConstraintLayout>
 </android.support.design.widget.CoordinatorLayout>

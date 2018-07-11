@@ -55,6 +55,9 @@ public class BreakTimerActivity extends AppCompatActivity implements View.OnClic
     private MediaPlayer mySound;
     private Boolean paused;
 
+    /* Whenever the orientation changes, how much time is left
+    and whether the timer was paused or not is saved and used by the
+    new Activity that will be created */
     @Override
     protected void onSaveInstanceState(Bundle state) {
         super.onSaveInstanceState(state);
@@ -66,6 +69,7 @@ public class BreakTimerActivity extends AppCompatActivity implements View.OnClic
         resumeButton.setVisibility(View.VISIBLE);
     }
 
+    // Back button has same function as the cancel button
     @Override
     public void onBackPressed() {
         timer.cancel();
@@ -128,19 +132,7 @@ public class BreakTimerActivity extends AppCompatActivity implements View.OnClic
         int breakSecs = i.getIntExtra("breakSecs", 0);
         int currentRound = i.getIntExtra("currentRound", 0);
 
-        // Gets height and width of device
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int height = displayMetrics.heightPixels;
-        int width = displayMetrics.widthPixels;
-
         mainTimerText = (TextView) findViewById(R.id.MainTimer);
-
-        /* The timer for devices 500px x 900px or smaller and will have a
-        smaller font than the regular sw300dp font of 110sp. */
-        if (height <= 500 && width <= 900) {
-            mainTimerText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 93);
-        }
 
         myHandler = new Handler();
 

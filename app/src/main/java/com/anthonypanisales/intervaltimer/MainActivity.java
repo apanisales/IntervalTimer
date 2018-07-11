@@ -77,21 +77,21 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
     on whether the continuous rounds switch is enabled or disabled. */
     private CompoundButton.OnCheckedChangeListener roundsSwitchListener = new CompoundButton.OnCheckedChangeListener() {
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            if (isChecked) {
-                findViewById(R.id.numberOfRoundsText).setVisibility(View.INVISIBLE);
-                specificRoundsEditText.setVisibility(View.INVISIBLE);
-                startButton.setEnabled(!(roundMins == 0 && roundSecs == 0) &&
-                        !(breakMins == 0 && breakSecs == 0));
+        if (isChecked) {
+            findViewById(R.id.numberOfRoundsText).setVisibility(View.INVISIBLE);
+            specificRoundsEditText.setVisibility(View.INVISIBLE);
+            startButton.setEnabled(!(roundMins == 0 && roundSecs == 0) &&
+                    !(breakMins == 0 && breakSecs == 0));
+        } else {
+            findViewById(R.id.numberOfRoundsText).setVisibility(View.VISIBLE);
+            specificRoundsEditText.setVisibility(View.VISIBLE);
+            if (rounds == 1) {
+                startButton.setEnabled(!(roundMins == 0 && roundSecs == 0));
             } else {
-                findViewById(R.id.numberOfRoundsText).setVisibility(View.VISIBLE);
-                specificRoundsEditText.setVisibility(View.VISIBLE);
-                if (rounds == 1) {
-                    startButton.setEnabled(!(roundMins == 0 && roundSecs == 0));
-                } else {
-                    startButton.setEnabled(!(roundMins == 0 && roundSecs == 0) &&
-                            !(breakMins == 0 && breakSecs == 0) && rounds != 0);
-                }
+                startButton.setEnabled(!(roundMins == 0 && roundSecs == 0) &&
+                        !(breakMins == 0 && breakSecs == 0) && rounds != 0);
             }
+        }
         }
     };
 
@@ -156,9 +156,9 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         roundIntent.putExtra("breakSecs", breakSecs);
         roundIntent.putExtra("currentRound", 1);
 
-        // -1 means continuous rounds
+        // Continuous rounds is actually 99999 rounds
         if (roundsSwitch.isChecked()) {
-            roundIntent.putExtra("rounds", -1);
+            roundIntent.putExtra("rounds", 99999);
         } else {
             roundIntent.putExtra("rounds", rounds);
         }

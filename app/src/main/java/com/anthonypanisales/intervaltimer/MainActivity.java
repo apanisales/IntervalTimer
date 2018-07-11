@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             String roundInput = specificRoundsEditText.getText().toString();
 
-            // Should I have a max number of rounds???
-
             /* If an invalid combination of values is selected by the user, the
             start button will be disabled. */
             if (!roundInput.equals("")) {

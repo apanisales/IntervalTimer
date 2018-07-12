@@ -249,7 +249,7 @@
             android:topRightRadius="10dp"
             android:enabled="false"
             android:onClick="onButtonTap"
-            android:text="Start"
+            android:text="@string/start_button_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintLeft_toLeftOf="parent"

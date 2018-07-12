@@ -37,7 +37,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="24dp"
-            android:text="Break"
+            android:text="@string/rest_text"
             android:textColor="@color/breakTimerColor"
             android:textSize="@dimen/sw300dp_land_round_counter_size"
             app:layout_constraintBottom_toTopOf="@+id/break_cancel_button"

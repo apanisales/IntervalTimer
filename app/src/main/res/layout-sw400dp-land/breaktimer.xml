@@ -38,7 +38,7 @@
             android:layout_marginRight="44dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="44dp"
-            android:text="Break"
+            android:text="@string/rest_text"
             android:textColor="@color/breakTimerColor"
             android:textSize="@dimen/sw400dp_land_round_counter_size"
             app:layout_constraintBottom_toBottomOf="parent"

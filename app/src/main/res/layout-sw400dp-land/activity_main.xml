@@ -222,7 +222,7 @@
             android:bottomRightRadius="10dp"
             android:enabled="false"
             android:onClick="onButtonTap"
-            android:text="Start"
+            android:text="@string/start_button_text"
             android:textSize="14sp"
             android:topLeftRadius="10dp"
             android:topRightRadius="10dp"

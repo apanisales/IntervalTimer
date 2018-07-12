@@ -35,7 +35,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
-            android:text="Break"
+            android:text="@string/rest_text"
             android:textColor="@color/breakTimerColor"
             android:textSize="@dimen/sw600dp_port_round_counter_size"
             app:layout_constraintBottom_toBottomOf="parent"

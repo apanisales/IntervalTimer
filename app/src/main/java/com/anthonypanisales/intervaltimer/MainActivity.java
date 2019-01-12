@@ -154,9 +154,8 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         roundIntent.putExtra("breakSecs", breakSecs);
         roundIntent.putExtra("currentRound", 1);
 
-        // Continuous rounds is actually 99999 rounds
         if (roundsSwitch.isChecked()) {
-            roundIntent.putExtra("rounds", 99999);
+            roundIntent.putExtra("rounds", -1);
         } else {
             roundIntent.putExtra("rounds", rounds);
         }

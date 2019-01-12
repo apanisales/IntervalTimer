@@ -150,12 +150,22 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
         Button cancelButton = (Button) findViewById(R.id.round_cancel_button);
         cancelButton.setOnClickListener(this);
 
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            // Portrait Mode
-            roundCounter.setText(String.format(Locale.US, "Round %d", currentRound));
+        if (rounds != -1) { // If not continuous rounds
+            if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                // Portrait Mode
+                roundCounter.setText(String.format(Locale.US, "Round %d", currentRound));
+            } else {
+                // Landscape Mode
+                roundCounter.setText(String.format(Locale.US, Integer.toString(currentRound)));
+            }
         } else {
-            // Landscape Mode
-            roundCounter.setText(String.format(Locale.US, Integer.toString(currentRound)));
+            if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                // Portrait Mode
+                roundCounter.setText(String.format(Locale.US, "Round ∞"));
+            } else {
+                // Landscape Mode
+                roundCounter.setText(String.format(Locale.US, "∞"));
+            }
         }
 
         if (savedInstanceState != null && savedInstanceState.getSerializable("millisecsLeft") != null) {
@@ -175,7 +185,13 @@ public class RoundTimerActivity extends AppCompatActivity implements View.OnClic
         breakIntent.putExtra("breakMins", breakMins);
         breakIntent.putExtra("breakSecs", breakSecs);
         breakIntent.putExtra("currentRound", ++currentRound);
-        breakIntent.putExtra("rounds", --rounds);
+
+        // If continuous rounds, then no need to decrement
+        if (rounds > 0) {
+            breakIntent.putExtra("rounds", --rounds);
+        } else {
+            breakIntent.putExtra("rounds", rounds);
+        }
 
         myHandler.postDelayed(new Runnable() {
             @Override

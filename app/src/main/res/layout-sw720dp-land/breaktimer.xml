@@ -1,130 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
     android:orientation="horizontal"
-    android:background="@color/background">
+    android:gravity="center">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
-        android:background="@color/background"
-        android:layout_gravity="center_vertical">
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/MainTimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
             android:padding="0dp"
             android:text="00:00"
             android:textColor="@color/breakTimerColor"
-            android:textSize="@dimen/sw720dp_land_timer_font_size"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.154"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.496"
-            android:layout_gravity="center_horizontal"/>
+            android:textSize="@dimen/sw720dp_land_timer_font_size"/>
+
     </LinearLayout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="100dp"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
-        android:background="@color/background"
-        android:layout_gravity="center_vertical">
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
 
         <TextView
-            android:id="@+id/breakText"
+            android:id="@+id/round_counter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginRight="44dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="44dp"
-            android:text="@string/rest_text"
+            android:text="@string/break_text"
             android:textColor="@color/breakTimerColor"
-            android:textSize="@dimen/sw720dp_land_round_counter_size"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/MainTimer"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.078" />
+            android:textSize="@dimen/sw720dp_land_round_counter_size" />
 
         <Button
             android:id="@+id/break_pause_button"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:bottomRightRadius="10dp"
             android:bottomLeftRadius="10dp"
             android:topLeftRadius="10dp"
             android:topRightRadius="10dp"
             android:text="@string/pause"
-            android:textSize="@dimen/sw720dp_land_button_text_size"
-            app:layout_constraintBottom_toTopOf="@+id/break_cancel_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/MainTimer"
-            app:layout_constraintTop_toBottomOf="@+id/breakText"
-            app:layout_constraintVertical_bias="1.0" />
+            android:textSize="@dimen/sw720dp_land_button_text_size" />
 
         <Button
             android:id="@+id/break_resume_button"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:bottomRightRadius="10dp"
             android:bottomLeftRadius="10dp"
             android:topLeftRadius="10dp"
             android:topRightRadius="10dp"
             android:text="@string/resume"
             android:textSize="@dimen/sw720dp_land_button_text_size"
-            android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/break_cancel_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/MainTimer"
-            app:layout_constraintTop_toBottomOf="@+id/breakText"
-            app:layout_constraintVertical_bias="1.0" />
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/break_cancel_button"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:bottomLeftRadius="10dp"
             android:bottomRightRadius="10dp"
             android:text="@string/cancel"
             android:textSize="@dimen/sw720dp_land_button_text_size"
             android:topLeftRadius="10dp"
-            android:topRightRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toEndOf="@+id/MainTimer"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.645" />
+            android:topRightRadius="10dp" />
 
     </LinearLayout>
-
 </LinearLayout>
 
